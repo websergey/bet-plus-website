@@ -7,17 +7,104 @@
     <title>BET+ ставки на любые события в мире</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <nav class="main-menu">
-      <ul>
-        <li><a href="/"><img src="img/logo.png"></a></li>
-        <li><a href="/line">Линия</a></li>
-        <li><a href="/live">LIVE</a></li>
-        <li><a href="/resluts">Результаты</a></li>
-        <li><a href="/check-coupon">Проверить купон</a></li>
-      </ul>
-    </nav>
+    <header class="page-header">
+      <nav class="main-menu">
+        <ul class="site-nav">
+          <li class="site-nav-item">
+            <a href="/"><img src="img/logo.png"></a>
+          </li>
+          <li class="site-nav-item">
+            <a href="/line" class="selected-menu-item">Линия</a>
+          </li>
+          <li class="site-nav-item">
+            <a href="/live">LIVE</a>
+          </li>
+          <li class="site-nav-item">
+            <a href="/resluts">Результаты</a>
+          </li>
+          <li class="site-nav-item">
+            <a href="/check-coupon">Проверить купон</a>
+          </li>
+          <li class="user-nav _fright">
+            <a class="user user-img" href="#"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
+            <a class="user user-name" id="user-name" href="#">Степан Иванов</a>
+            <a class="user user-money" id="user-money" href="#">421 304 <i class="fas fa-ruble-sign"></i></a>
+            <div class="dropdown">
+              <a class="user user-options-btn" id="user-options" href="#"><i class="fas fa-angle-down"></i></a>
+              <div class="user-dropdown">
+                <a href="#">Мой профиль</a>
+                <a href="#">Управление балансом</a>
+                <a href="#">История ставок</a>
+                <a href="#">Выйти</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page-container">
+      <section class="left-menu">
+        <form class="" action="someaction.php" method="post">
+          <input type="text" name="left-menu-search" id="left-menu-search"
+            class="left-menu-search" placeholder="Поиск категории...">
+          <label for="left-menu-search"><i></i></label>
+        </form>
+        <ul>
+          <li>
+            <a href="#">Футбол</a>
+          </li>
+          <li>
+            <a href="#">Воллейбол</a>
+          </li>
+          <li>
+            <a href="#">Хоккей</a>
+          </li>
+          <li>
+            <a href="#">Киберспорт</a>
+          </li>
+          <li>
+            <a href="#">Теннис</a>
+          </li>
+          <li>
+            <a href="#">Баскетбол</a>
+          </li>
+          <li>
+            <a href="#">Настольный теннис</a>
+          </li>
+          <li>
+            <a href="#">Регби</a>
+          </li>
+          <li>
+            <a href="#">Бейсбол</a>
+          </li>
+        </ul>
+      </section>
+      <div class="page-wrapper">
+        <section class="slider">
+          <ul>
+            <li>
+              <a href="#"></a>
+            </li>
+            <li>
+              <a href="#"></a>
+            </li>
+            <li>
+              <a href="#"></a>
+            </li>
+          </ul>
+        </section>
+        <section class="bets-grid">
+
+        </section>
+      </div>
+    </main>
+    <footer class="">
+    </footer>
   <script type="text/javascript" src="/js/main.js"></script>
   </body>
 </html>
