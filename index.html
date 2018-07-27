@@ -49,38 +49,58 @@
     </header>
     <main class="page-container">
       <section class="left-menu">
-        <form class="" action="someaction.php" method="post">
-          <input type="text" name="left-menu-search" id="left-menu-search"
-            class="left-menu-search" placeholder="Поиск категории...">
-          <label for="left-menu-search"><i></i></label>
+        <form class="left-menu-form mb-2" action="someaction.php" method="post">
+          <input type="text" name="left-search" id="left-search" placeholder="Поиск категории..." required autocomplete="off">
+          <button type="submit" for="left-search"><i class="fas fa-search"></i></button>
         </form>
-        <ul>
+        <ul class="left-menu-cats">
           <li>
-            <a href="#">Футбол</a>
+            <a id="cat-football" href="#">
+              <span class="cat-name"><i class="far fa-futbol mr-1"></i>Футбол</span>
+              <span class="cat-count" id="cat-count">214</span>
+            </a>
+          </li>
+          <li id="cat-volleyball">
+            <a id="cat-volleyball" href="#">
+              <span class="cat-name"><i class="fas fa-volleyball-ball mr-1"></i>Воллейбол</span>
+              <span class="cat-count" id="cat-count">42</span>
+            </a>
           </li>
           <li>
-            <a href="#">Воллейбол</a>
+            <a id="cat-hockey" href="#">
+              <span class="cat-name"><i class="fas fa-hockey-puck mr-1"></i>Хоккей</span>
+              <span class="cat-count" id="cat-count">124</span>
+            </a>
           </li>
           <li>
-            <a href="#">Хоккей</a>
+            <a id="cat-cybersport" href="#">
+              <span class="cat-name"><i class="fas fa-gamepad mr-1"></i>Киберспорт</span>
+              <span class="cat-count" id="cat-count">93</span>
+            </a>
           </li>
           <li>
-            <a href="#">Киберспорт</a>
+            <a id="cat-basketball" href="#">
+              <span class="cat-name"><i class="fas fa-basketball-ball mr-1"></i>Баскетбол</span>
+              <span class="cat-count" id="cat-count">78</span>
+            </a>
           </li>
           <li>
-            <a href="#">Теннис</a>
+            <a id="cat-table-tennis" href="#">
+              <span class="cat-name"><i class="fas fa-table-tennis mr-1"></i>Настольный теннис</span>
+              <span class="cat-count" id="cat-count">5</span>
+            </a>
           </li>
           <li>
-            <a href="#">Баскетбол</a>
+            <a id="cat-ragby" href="#">
+              <span class="cat-name"><i class="fas fa-football-ball mr-1"></i>Регби</span>
+              <span class="cat-count" id="cat-count">8</span>
+            </a>
           </li>
           <li>
-            <a href="#">Настольный теннис</a>
-          </li>
-          <li>
-            <a href="#">Регби</a>
-          </li>
-          <li>
-            <a href="#">Бейсбол</a>
+            <a id="cat-baseball" href="#">
+              <span class="cat-name"><i class="fas fa-baseball-ball mr-1"></i>Бейсбол</span>
+              <span class="cat-count" id="cat-count">11</span>
+            </a>
           </li>
         </ul>
       </section>
@@ -97,6 +117,8 @@
               <a href="#"></a>
             </li>
           </ul>
+        </section>
+        <section class="filters">
         </section>
         <section class="bets-grid">
 
