@@ -241,18 +241,56 @@
       <section class="right-menu">
         <p>Купон</p>
         <form class="right-menu-form mb-2" action="someaction.php" method="post">
-          <label for="bet-sum">Сумма ставки:</label>
-          <input type="text" name="bet-sum" id="bet-sum" placeholder="1000" required autocomplete="off" size="8" min="1">
-          <div class="currency-dropdown">
-            <a href="#" class="currency-btn">
-              <i class="fas fa-ruble-sign"></i>
-              <i class="fas fa-angle-down"></i>
-            </a>
-            <div class="dropdown currency-dropdown-style">
-              <a href="#" class="currency-item"><i class="fas fa-dollar-sign"></i></a>
-              <a href="#" class="currency-item"><i class="fas fa-euro-sign"></i></a>
+          <div class="coupon-event-container">
+            <ul>
+              <li class="coupon-event">
+                <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
+                <div class="coupon-event-name">Реал Мадрид - Барселона</div>
+                <div class="coupon-event-data">
+                  <span class="coupon-event-bet">П1</span>
+                  <span class="coupon-event-koef">x 2.341</span>
+                </div>
+              </li>
+              <li class="coupon-event">
+                <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
+                <div class="coupon-event-name">Реал Мадрид - Барселона</div>
+                <div class="coupon-event-data">
+                  <span class="coupon-event-bet">П1</span>
+                  <span class="coupon-event-koef">x 2.341</span>
+                </div>
+              </li>
+            <ul>
+          </div>
+          <div class="coupon-summary">
+            <div class="summary-koef">
+              Суммарный коэффициент:
+              <div class="summary-koef-num">
+                x
+                <span id="koef-num">4.951</span>
+              </div>
+            </div>
+            <div class="summary-win">Выигрыш:
+              <div class="summary-win-num">
+                <span id="win-num">4951.00</span>
+                <i class="fas fa-ruble-sign"></i>
+              </div>
             </div>
           </div>
+          <div class="bet-input-container mb-2">
+            <label for="bet-sum">Сумма ставки:</label>
+            <input type="text" value="1000" name="bet-sum" id="bet-sum" placeholder="Сумма..." required autocomplete="off" size="8" min="1">
+            <div class="currency-dropdown">
+              <a href="#" class="currency-btn">
+                <i class="fas fa-ruble-sign"></i>
+                <i class="fas fa-angle-down"></i>
+              </a>
+              <div class="dropdown currency-dropdown-style">
+                <a href="#" class="currency-item" id="currency-1"><i class="fas fa-dollar-sign"></i></a>
+                <a href="#" class="currency-item" id="currency-2"><i class="fas fa-euro-sign"></i></a>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-white-red btn-big">Сделать ставку</button>
         </form>
       </section>
     </main>

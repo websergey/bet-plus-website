@@ -56,6 +56,9 @@ h4 {
 h5 {
 
 }
+.hidden {
+  display: none;
+}
 ._center {
 text-align:center
 }
@@ -77,19 +80,39 @@ vertical-align:middle
 }
 
 .btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
   padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
   background: #4c566a;
   color: #fff;
+  transition: all .3s linear;
 }
 .btn:hover {
-
+  background: #bfc7d5;
+  color: #0d1b2a;
+}
+.btn-white-red {
+  background: #fff;
+  color: #f82516;
+}
+.btn-white-red:hover {
+  background: #f82516;
+  color: #fff;
+  box-shadow: 0 3px 20px #f82516;
 }
 .btn-red {
   background: #f82516;
   color: #fff;
+  box-shadow: 0 3px 20px #f82516;
 }
 .btn-red:hover {
-
+  background: #fff;
+  color: #f82516;
+  box-shadow: none;
 }
 .btn-dark-blue {
 
@@ -98,7 +121,9 @@ vertical-align:middle
 
 }
 .btn-big {
-
+  display: block;
+  width: 100%;
+  font-size: 16px;
 }
 
 .mt-1 {
@@ -376,6 +401,7 @@ input, button {
   display: flex;
   flex-direction: column;
   flex-grow: 20;
+  overflow: hidden;
 }
 
 /*----LEFT-NAVIGATION----*/
@@ -389,6 +415,7 @@ input, button {
   padding: 30px;
   min-height: -webkit-calc(100vh - 129px);
   min-height: calc(100vh - 129px);
+  max-width: 230px;
 }
 .left-menu ul {
   display: flex;
@@ -457,15 +484,15 @@ input[name='left-search']:focus {
 
 .right-menu {
   background: #1b263b;
-  display: inline-flex;
-  flex-direction: column;
   flex-grow: 1;
   color: #fff;
   padding: 30px;
   min-height: -webkit-calc(100vh - 129px);
   min-height: calc(100vh - 129px);
+  width: 230px;
 }
-.right-menu-form {
+.bet-input-container {
+  margin-top: 10px;
   display: inline-flex;
 }
 input[name='bet-sum'] {
@@ -550,6 +577,60 @@ a.currency-btn > i.fa-angle-down {
   opacity: 1;
   transform: scaleY(1);
 }
+.coupon-event-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.coupon-event .coupon-event-name {
+  font-weight: 600;
+  font-size: 12px;
+}
+.coupon-event .coupon-event-koef {
+  float: right;
+}
+.coupon-event .coupon-event-data {
+  color: #bfc7d5;
+}
+.coupon-event-container ul .coupon-event {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.coupon-event-container ul:last-child {
+  border-bottom: 1px solid #4c566a;
+}
+.delete-coupon-event {
+  float: right;
+  transition: all .3s linear;
+}
+.coupon-summary {
+  padding-top: 5px;
+  font-size: 12px;
+}
+.coupon-summary div{
+  padding: 5px 0;
+}
+.coupon-summary .summary-koef-num {
+  float: right;
+  color: #bfc7d5;
+  padding: 0;
+}
+.summary-win {
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+}
+.summary-win .summary-win-num {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  display: inline-block;
+  color: #fff;
+  background: #f82516;
+  padding: 3px 6px;
+  font-size: 12px;
+  border-radius: 12px;
+}
 
 /*----SLIDER----*/
 
@@ -557,8 +638,8 @@ a.currency-btn > i.fa-angle-down {
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  background: #ccc;
   width: 100%;
+  box-shadow: 0 -40px 35px 35px #0d1b2a;
 }
 #slider ul {
   position: relative;
@@ -573,7 +654,7 @@ a.currency-btn > i.fa-angle-down {
   margin: 0;
   width: 76%;
   padding: 12%;
-  background: #ccc;
+  background: #60728e;
   text-align: center;
 }
 a.control_prev, a.control_next {

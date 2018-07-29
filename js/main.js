@@ -19,5 +19,30 @@ jQuery(document).ready(function ($) {
 		temp.setDate(now.getDate() + i);
 		$('.filter-date').append('<a class="filter-item-date" href="#">' + formatDate(temp) + '</a>');
 	}
-	
+
+	var currency = ['fa-ruble-sign', 'fa-dollar-sign', 'fa-euro-sign'];
+
+	$('.currency-item').click(function() {
+		$(this).attr('id') == 'currency-1' ? k = 0 : k = 1;
+		for (var i = 0; i < currency.length; i++) {
+			for (var j = 0; j < currency.length; j++) {
+				if ($('.currency-btn i:first').hasClass(currency[i]) == true) {
+	 				if ($('.currency-item:eq(' + k + ') i').hasClass(currency[j]) == true) {
+	 					$('.currency-btn i:first').removeClass(currency[i]).addClass(currency[j]);
+						$('.summary-win-num i').removeClass(currency[i]).addClass(currency[j]);
+	 					$('.currency-item:eq(' + k + ') i').removeClass(currency[j]).addClass(currency[i]);
+						return;
+	 				}
+				}
+			}
+		}
+	})
+
+	var v = "";
+	$('#bet-sum').on('input', function () {
+		$(this).val($(this).val().replace(/[^\d]/g, ''));
+		temp = $(this).val() * parseFloat($('#koef-num').html());
+		$('#win-num').html(temp.toFixed(2));
+	});
+
 });
