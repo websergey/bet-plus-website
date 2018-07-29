@@ -16,7 +16,7 @@
       <nav class="main-menu">
         <ul class="site-nav">
           <li class="site-nav-item">
-            <a href="/"><img src="img/logo.png"></a>
+            <a href="#"><img src="img/logo.png"></a>
           </li>
           <li class="site-nav-item">
             <a href="/line" class="selected-menu-item">Линия</a>
@@ -34,9 +34,9 @@
             <a class="user user-img" href="#"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
             <a class="user user-name" id="user-name" href="#">Степан Иванов</a>
             <a class="user user-money" id="user-money" href="#">421 304 <i class="fas fa-ruble-sign"></i></a>
-            <div class="dropdown">
+            <div class="user-dropdown">
               <a class="user user-options-btn" id="user-options" href="#"><i class="fas fa-angle-down"></i></a>
-              <div class="user-dropdown">
+              <div class="dropdown">
                 <a href="#">Мой профиль</a>
                 <a href="#">Управление балансом</a>
                 <a href="#">История ставок</a>
@@ -58,6 +58,12 @@
             <a id="cat-football" href="#">
               <span class="cat-name"><i class="far fa-futbol mr-1"></i>Футбол</span>
               <span class="cat-count" id="cat-count">214</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-tennis" href="#">
+              <span class="cat-name"><i class="fas fa-solar-panel mr-1"></i>Теннис</span>
+              <span class="cat-count" id="cat-count">152</span>
             </a>
           </li>
           <li id="cat-volleyball">
@@ -102,31 +108,156 @@
               <span class="cat-count" id="cat-count">11</span>
             </a>
           </li>
+          <li>
+            <a id="cat-snuker" href="#">
+              <span class="cat-name"><i class="fas fa-circle mr-1"></i>Снукер</span>
+              <span class="cat-count" id="cat-count">7</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-boks" href="#">
+              <span class="cat-name"><i class="fas fa-hand-rock mr-1"></i>Бокс</span>
+              <span class="cat-count" id="cat-count">16</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-mma" href="#">
+              <span class="cat-name"><i class="fas fa-sign-language mr-1"></i>Единоборства</span>
+              <span class="cat-count" id="cat-count">51</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-biatlon" href="#">
+              <span class="cat-name"><i class="far fa-dot-circle mr-1"></i>Биатлон</span>
+              <span class="cat-count" id="cat-count">11</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-bicycle" href="#">
+              <span class="cat-name"><i class="fas fa-bicycle mr-1"></i>Велоспорт</span>
+              <span class="cat-count" id="cat-count">15</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-formula1" href="#">
+              <span class="cat-name"><i class="fas fa-flag-checkered mr-1"></i>Формула 1</span>
+              <span class="cat-count" id="cat-count">53</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-darts" href="#">
+              <span class="cat-name"><i class="fas fa-bullseye mr-1"></i>Дартс</span>
+              <span class="cat-count" id="cat-count">16</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-skachki" href="#">
+              <span class="cat-name"><i class="fab fa-sticker-mule mr-1"></i>Скачки</span>
+              <span class="cat-count" id="cat-count">134</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-gandball" href="#">
+              <span class="cat-name"><i class="fas fa-swimmer mr-1"></i>Гандбол</span>
+              <span class="cat-count" id="cat-count">9</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-baseball" href="#">
+              <span class="cat-name"><i class="fas fa-highlighter mr-1"></i>Крикет</span>
+              <span class="cat-count" id="cat-count">16</span>
+            </a>
+          </li>
+          <li>
+            <a id="cat-baseball" href="#">
+              <span class="cat-name"><i class="fas fa-golf-ball mr-1"></i>Гольф</span>
+              <span class="cat-count" id="cat-count">31</span>
+            </a>
+          </li>
         </ul>
       </section>
       <div class="page-wrapper">
-        <section class="slider">
+        <section id="slider">
           <ul>
             <li>
-              <a href="#"></a>
-            </li>
-            <li>
-              <a href="#"></a>
-            </li>
-            <li>
-              <a href="#"></a>
+              <a href="#">SLIDER PLACE</a>
             </li>
           </ul>
         </section>
         <section class="filters">
+          <ul>
+            <li><a href="#" class="filter-item filter-selected-item">Все</a></li>
+            <li>
+              <div class="filter-dropdown">
+                <a href="#" class="filter-item">По часам <i class="fas fa-angle-down"></i></a>
+                <div class="dropdown filter-dropdown-style">
+                  <a href="#" class="filter-item-hour">< 48</a>
+                  <a href="#" class="filter-item-hour">< 24</a>
+                  <a href="#" class="filter-item-hour">< 12</a>
+                  <a href="#" class="filter-item-hour">< 6</a>
+                  <a href="#" class="filter-item-hour">< 5</a>
+                  <a href="#" class="filter-item-hour">< 4</a>
+                  <a href="#" class="filter-item-hour">< 3</a>
+                  <a href="#" class="filter-item-hour">< 2</a>
+                  <a href="#" class="filter-item-hour">< 1</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="filter-dropdown">
+                <a href="#" class="filter-item">По дням <i class="fas fa-angle-down"></i></a>
+                <div class="dropdown filter-dropdown-style filter-date"></div>
+              </div>
+            </li>
+            <li>
+              <form class="filter-menu-form" action="someaction.php" method="post">
+                <input type="text" name="filter-search" id="filter-search" placeholder="" required autocomplete="off">
+                <button type="submit" for="filter-search"><i class="fas fa-search"></i></button>
+              </form>
+            </li>
+          </ul>
         </section>
-        <section class="bets-grid">
-
+        <section class="event-grid">
+          <div class="event-item event-selected-item">
+            <div class="event-name">
+              <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
+              <span class="event-count">1543<span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-name">
+              <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
+              <span class="event-count">133<span>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-name">
+              <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
+              <span class="event-count">6<span>
+            </div>
+          </div>
         </section>
       </div>
+      <section class="right-menu">
+        <p>Купон</p>
+        <form class="right-menu-form mb-2" action="someaction.php" method="post">
+          <label for="bet-sum">Сумма ставки:</label>
+          <input type="text" name="bet-sum" id="bet-sum" placeholder="1000" required autocomplete="off" size="8" min="1">
+          <div class="currency-dropdown">
+            <a href="#" class="currency-btn">
+              <i class="fas fa-ruble-sign"></i>
+              <i class="fas fa-angle-down"></i>
+            </a>
+            <div class="dropdown currency-dropdown-style">
+              <a href="#" class="currency-item"><i class="fas fa-dollar-sign"></i></a>
+              <a href="#" class="currency-item"><i class="fas fa-euro-sign"></i></a>
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
     <footer class="">
     </footer>
-  <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
