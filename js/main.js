@@ -45,4 +45,17 @@ jQuery(document).ready(function ($) {
 		$('#win-num').html(temp.toFixed(2));
 	});
 
+	$('#coupon-toggle-1').click(function() {
+		if ($(this).hasClass('toggle-selected') == false) {
+			$(this).addClass('toggle-selected');
+			$('#coupon-toggle-2').removeClass('toggle-selected');
+		}
+	});
+	$('#coupon-toggle-2').click(function() {
+		if ($(this).hasClass('toggle-selected') == false) {
+			$(this).addClass('toggle-selected');
+			$('#coupon-toggle-1').removeClass('toggle-selected');
+		}
+	});
+
 });

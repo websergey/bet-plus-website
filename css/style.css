@@ -83,8 +83,8 @@ vertical-align:middle
   outline: none;
   border: none;
   cursor: pointer;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: 600;
   border-radius: 30px;
   background: #4c566a;
@@ -124,6 +124,7 @@ vertical-align:middle
   display: block;
   width: 100%;
   font-size: 16px;
+  padding: 10px 20px;
 }
 
 .mt-1 {
@@ -162,7 +163,9 @@ vertical-align:middle
 .pr-1 {
   padding-right: 10px;
 }
+
 /*----MAIN-NAVIGATION----*/
+
 .main-menu {
   display: block;
   position: fixed;
@@ -359,10 +362,10 @@ li.user-nav a.user-options-btn:hover > i{
 }
 .dropdown::after {
   content: '';
-  position: absolute; /* Абсолютное позиционирование */
-  right: 4px; top: -14px; /* Положение треугольника */
-  border: 10px solid transparent; /* Прозрачные границы */
-  border-bottom: 12px solid #fff; /* Добавляем треугольник */
+  position: absolute;
+  right: 4px; top: -14px;
+  border: 10px solid transparent;
+  border-bottom: 12px solid #fff;
 }
 .user-dropdown:hover .dropdown {
   zoom: 1;
@@ -631,6 +634,62 @@ a.currency-btn > i.fa-angle-down {
   font-size: 12px;
   border-radius: 12px;
 }
+.coupon-toggle-block {
+  width: 100%;
+  text-align: center;
+}
+.coupon-toggle-block ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.coupon-toggle-block ul li {
+  flex-grow: 1;
+  border-bottom: 2px solid #4c566a;
+}
+.coupon-toggle-block ul li a {
+  position: relative;
+  display: block;
+  color: #4c566a;
+  padding: 10px;
+  transition: all .3s linear;
+}
+.coupon-toggle-block ul li a:hover {
+  color: #fff;
+}
+.coupon-toggle-block ul li a::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 100%;
+  bottom: -2px;
+  left: 0;
+  background: #f82516;
+  transition: all .3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.coupon-toggle-block ul li a:hover::after {
+  background: #fff;
+  transform: scaleX(1);
+}
+#coupon-toggle-2::after {
+  transform-origin: left;
+}
+.coupon-toggle-block ul li a.toggle-selected {
+  color: #f82516;
+}
+.coupon-toggle-block ul li .toggle-selected:hover::after {
+  background: #f82516;
+}
+.coupon-toggle-block ul li > .toggle-selected::after {
+  background: #f82516;
+  transform: scaleX(1);
+}
+
 
 /*----SLIDER----*/
 
