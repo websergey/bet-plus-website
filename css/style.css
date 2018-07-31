@@ -1,17 +1,16 @@
 /*----MAIN-STYLES----*/
 
 html, body {
-  background: #fff;
+  background: #0d1b2a;
   color: #0d1b2a;
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif, Arial;
   position:relative;
   cursor:default;
-  min-width: 1024px;
+  min-width: 1200px;
   font-size: 14px;
   font-weight: 400;
-  min-height: 100vh;
 }
 
 a {
@@ -73,6 +72,40 @@ vertical-align:middle
 }
 ._fleft {
   float: left;
+}
+
+.left-menu-cats::-webkit-scrollbar {
+  width: 17px;
+  background: #0d1b2a;
+}
+.left-menu-cats::-webkit-scrollbar-track {
+  width: 17px;
+  background: #0d1b2a;
+  border-left: solid 15px #1b263b;
+}
+.left-menu-cats::-webkit-scrollbar-thumb {
+  background: #4c566a;
+  border-left: solid 15px #1b263b;
+}
+.left-menu-cats::-webkit-scrollbar-thumb:window-inactive {
+	background: #0d1b2a;
+}
+
+.page-content::-webkit-scrollbar {
+  width: 13px;
+  background: #1b263b;
+}
+.page-content::-webkit-scrollbar-track {
+  width: 13px;
+  background: #0d1b2a;
+  border-left: solid 10px #0d1b2a;
+}
+.page-content::-webkit-scrollbar-thumb {
+  background: #4c566a;
+  border-left: solid 10px #0d1b2a;
+}
+.page-content::-webkit-scrollbar-thumb:window-inactive {
+	background: #0d1b2a;
 }
 
 .ruble:after {
@@ -171,7 +204,7 @@ vertical-align:middle
   position: fixed;
   top: 0;
   left: 0;
-  background: #0d1b2a;
+  background: #1b263b;
   color: #fff;
   width: 100%;
   height: 69px;
@@ -313,7 +346,7 @@ li.user-nav a.user-money:hover {
 }
 li.user-nav a.user-options-btn {
   margin-left: 10px;
-  background: #1b263b;
+  background: #0d1b2a;
   font-size: 12px;
   padding: 5px 10px;
   border-radius: 30px;
@@ -396,15 +429,17 @@ input, button {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  background: #fff;
-  min-width: 1024px;
+  background: #0d1b2a;
   padding-top: 69px;
+  margin-top: 5px;
 }
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
+.page-content {
   flex-grow: 20;
-  overflow: hidden;
+  min-width: 660px;
+  height: calc(100vh - 84px);
+  background: #0d1b2a;
+  margin: 5px;
+  overflow-y: auto;
 }
 
 /*----LEFT-NAVIGATION----*/
@@ -413,12 +448,12 @@ input, button {
   background: #1b263b;
   display: inline-flex;
   flex-direction: column;
-  flex-grow: 1;
   color: #fff;
-  padding: 30px;
-  min-height: -webkit-calc(100vh - 129px);
-  min-height: calc(100vh - 129px);
-  max-width: 230px;
+  padding: 20px;
+  max-width: 250px;
+  min-width: 200px;
+  margin: 5px;
+  border-radius: 5px;
 }
 .left-menu ul {
   display: flex;
@@ -426,6 +461,8 @@ input, button {
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 184px);
 }
 .left-menu li {
   flex-grow: 1;
@@ -434,6 +471,7 @@ input, button {
   display: block;
   padding: 5px 0;
   transition: all .3s linear;
+  font-size: 12px;
 }
 .left-menu li a .cat-count {
   border: 2px solid #fff;
@@ -447,7 +485,7 @@ input, button {
   border-color: #f82516;
 }
 .left-menu li a i {
-  font-size: 18px;
+  font-size: 16px;
   width: 20px;
   transform: translateY(1px);
   text-align: center;
@@ -487,12 +525,11 @@ input[name='left-search']:focus {
 
 .right-menu {
   background: #1b263b;
-  flex-grow: 1;
   color: #fff;
-  padding: 30px;
-  min-height: -webkit-calc(100vh - 129px);
-  min-height: calc(100vh - 129px);
-  width: 230px;
+  padding: 20px;
+  min-width: 230px;
+  margin: 5px;
+  border-radius: 5px;
 }
 .bet-input-container {
   margin-top: 10px;
@@ -595,12 +632,13 @@ a.currency-btn > i.fa-angle-down {
 .coupon-event .coupon-event-data {
   color: #bfc7d5;
 }
-.coupon-event-container ul .coupon-event {
+.coupon-event-container ul li.coupon-event {
   margin-bottom: 10px;
   font-size: 12px;
 }
 .coupon-event-container ul:last-child {
-  border-bottom: 1px solid #4c566a;
+  margin-top: 10px;
+  border-bottom: 2px solid #4c566a;
 }
 .delete-coupon-event {
   float: right;
@@ -695,10 +733,11 @@ a.currency-btn > i.fa-angle-down {
 
 #slider {
   position: relative;
-  overflow: hidden;
   margin: 0 auto;
   width: 100%;
-  box-shadow: 0 -40px 35px 35px #0d1b2a;
+  border-radius: 5px 5px 0 0;
+  background: #4c566a;
+  height: 300px;
 }
 #slider ul {
   position: relative;
@@ -711,9 +750,6 @@ a.currency-btn > i.fa-angle-down {
   position: relative;
   display: block;
   margin: 0;
-  width: 76%;
-  padding: 12%;
-  background: #60728e;
   text-align: center;
 }
 a.control_prev, a.control_next {
@@ -746,10 +782,11 @@ a.control_next {
 
 /*---FILTERS-MENU---*/
 .filters {
-  width: calc(100% - 60px);
-  padding: 30px;
+  width: calc(100% - 40px);
+  padding: 20px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
 }
-
 .filters ul {
   display: flex;
   flex-direction: row;
@@ -866,27 +903,32 @@ a.filter-item-hour:hover, a.filter-item-date:hover {
 
 .event-grid {
   width: 100%;
-  height: calc(100vh - 161px);
   background: #0d1b2a;
+  margin-top: 10px;
+}
+.event-head {
+  background: #1b263b;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+.event-head i.fa-angle-down {
+  transition: transform .3s ease-in-out;
 }
 .event-item {
-  background: #4c566a;
-  color: #fff;
-  padding: 10px 30px;
-  border-bottom: 3px solid #1b263b;
+  margin-bottom: 5px;
 }
 .event-selected-item {
-  background: #0d1b2a;
-  border-bottom: none;
+  background: #4c566a;
 }
 .event-selected-item > .event-count {
-  color: #0d1b2a;
-}
-.event-name {
+  color: #4c566a;
 }
 .event-name span.event-count {
   background: #fff;
-  color: #4c566a;
+  color: #1b263b;
   padding: 2px 7px;
   margin-left: 10px;
   border-radius: 15px;
@@ -894,6 +936,122 @@ a.filter-item-hour:hover, a.filter-item-date:hover {
   font-size: 10px;
 }
 
+.show-event {
+  float: right;
+}
+.event-body {
+  display: none;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+}
+.event-body table {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: none;
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
+}
+.event-body table thead {
+  background: #bfc7d5;
+  color: #4c566a;
+}
+.event-body table th {
+  padding: 10px 0;
+  font-size: 10px;
+  font-weight: 700;
+}
+.event-body table thead th:first-child {
+  text-align: left;
+  padding-left: 10px;
+}
+.event-body table td:first-child {
+  position: relative;
+  color: #1b263b;
+  padding: 10px;
+  padding-right: 0;
+}
+.event-body table td a {
+  display: inline-block;
+  border-radius: 15px;
+  background: #bfc7d5;
+  padding: 5px 10px;
+  max-width: 30px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #4c566a;
+  transition: all .3s ease-in-out;
+}
+.event-body table td a:hover {
+  color: #fff;
+  background: #4c566a;
+}
+.event-body table td a.event-koef-red {
+  background: #f82516;
+  box-shadow: 0 2px 10px #f82516;
+  color: #fff;
+}
+.event-body table td a.event-koef-red:hover {
+  background: #f82516;
+  box-shadow: none;
+}
+.event-body table td.total-koef {
+  background: #e4e9f1;
+  color: #4c566a;
+  font-size: 10px;
+  font-weight: 700;
+  transition: background .3s linear;
+}
+.event-body table tbody tr {
+  transition: background .3s linear;
+  border-bottom: 2px solid #bfc7d5;
+}
+/*.event-body table thead th:nth-child(8) {
+  border-left: 2px solid #4c566a;
+}*/
+.event-body table tbody td:nth-child(8) {
+  border-left: 2px solid #bfc7d5;
+}
+.event-body table tbody tr:last-child {
+  border: 0;
+}
+.event-body table tbody tr:hover {
+  background: #e4e9f1;
+}
+.event-body table tbody tr:hover > td.total-koef{
+  background: #bfc7d5;
+}
+.event-body table td:not(:first-child), .event-body table th:not(:first-child){
+  text-align: center;
+}
+.event-body table td time{
+  display: block;
+  font-size: 10px;
+  color: #4c566a;
+}
+.event-body table td .event-item-name {
+  font-weight: 700;
+  font-size: 12px;
+}
+.event-body table td .event-live::after {
+  content: 'LIVE';
+  display: inline-block;
+  margin-left: 10px;
+  background: #f82516;
+  box-shadow: 0 1px 7px #f82516;
+  color: #fff;
+  padding: 3px 7px;
+  font-size: 10px;
+  border-radius: 15px;
+  font-weight: 400;
+}
+.event-body table .event-block td a.event-other-koefs {
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  font-size: 10px;
+}
 /*----BETS-CART----*/
 
 /*----FOOTER----*/

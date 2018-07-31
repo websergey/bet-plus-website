@@ -50,7 +50,7 @@
     <main class="page-container">
       <section class="left-menu">
         <form class="left-menu-form mb-2" action="someaction.php" method="post">
-          <input type="text" name="left-search" id="left-search" placeholder="Поиск категории..." required autocomplete="off">
+          <input type="text" name="left-search" id="left-search" placeholder="Поиск категории..." size="17" required autocomplete="off">
           <button type="submit" for="left-search"><i class="fas fa-search"></i></button>
         </form>
         <ul class="left-menu-cats">
@@ -176,11 +176,11 @@
           </li>
         </ul>
       </section>
-      <div class="page-wrapper">
+      <div class="page-content">
         <section id="slider">
           <ul>
             <li>
-              <a href="#">SLIDER PLACE</a>
+              <a href="#"></a>
             </li>
           </ul>
         </section>
@@ -218,28 +218,70 @@
           </ul>
         </section>
         <section class="event-grid">
-          <div class="event-item event-selected-item">
-            <div class="event-name">
-              <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
-              <span class="event-count">1543<span>
-            </div>
-          </div>
           <div class="event-item">
-            <div class="event-name">
-              <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
-              <span class="event-count">133<span>
+            <div class="event-head event-selected-item">
+              <div class="event-name">
+                <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
+                <span class="event-count">1543</span>
+                <a class="show-event"><i class="fas fa-angle-down"></i></a>
+              </div>
             </div>
-          </div>
-          <div class="event-item">
-            <div class="event-name">
-              <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
-              <span class="event-count">6<span>
+            <div class="event-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Матч</th>
+                    <th>П1</th>
+                    <th>X</th>
+                    <th>П2</th>
+                    <th>1X</th>
+                    <th>12</th>
+                    <th>2X</th>
+                    <th>ТБ</th>
+                    <th class="total-sign">Тотал</th>
+                    <th>ТМ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="event-block">
+                    <td>
+                      <span class="event-item-name">Реал Мадрид – Барселона</span>
+                      <time>23.10.2018, 18:00</time>
+                    </td>
+                    <td><a class="event-koef" href="#">2.45</a></td>
+                    <td><a class="event-koef" href="#">2.44</a></td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                    <td><a class="event-koef" href="#">2.44</a></td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+
+                    <td><a class="event-koef" href="#">2.44</a></td>
+                    <td class="total-koef"> 2.54 </td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                  </tr>
+                  <tr class="event-block">
+                    <td>
+                      <span class="event-item-name event-live">Реал Мадрид – Барселона</span>
+                      <time>23.10.2018, 18:00</time>
+                    </td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                    <td><a class="event-koef" href="#">2.44</a></td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                    <td class="total-koef">2.54</td>
+                    <td><a class="event-koef" href="#">2.54</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
       </div>
       <section class="right-menu">
-        <p>Купон</p>
         <div class="coupon-toggle-block mb-2">
           <ul>
             <li><a id="coupon-toggle-1" class="toggle-selected" href="#">Экспресс</a></li>
@@ -265,7 +307,7 @@
                   <span class="coupon-event-koef">x 2.341</span>
                 </div>
               </li>
-            <ul>
+            </ul>
           </div>
           <div class="coupon-summary">
             <div class="summary-koef">
