@@ -92,12 +92,45 @@ jQuery(document).ready(function ($) {
 	  event.slideToggle('normal');
 	});
 
-	// Выбор ставки для события
+	// Открытие доп. меню событий
+
+	$('.event-other-koefs').click(function(){
+		var event = $(this).parents('tr.event-block').next('tr.event-other').eq(0);
+		var content = event.find('.event-other-block');
+		event.toggleClass('event-other-open');
+		content.toggleClass('event-other-block-open');
+	});
+
+	$('.event-other-button').click(function(){
+		var event = $(this).parent().children('div.event-other-category-koefs');
+		var arrow = $(this).find('i.fa-angle-down');
+
+		if (event.is(':hidden')) {
+			arrow.css('transform', 'rotate(-180deg) translateY(2px)');
+			$(this).toggleClass('event-other-button-selected');
+			event.slideToggle('fast');
+			$(this).css('border-radius', '5px 5px 0 0');
+		} else {
+			arrow.css('transform', 'rotate(0deg) translateY(0px)');
+			$(this).toggleClass('event-other-button-selected');
+			event.slideToggle('fast');
+			$(this).css('border-radius', '5px');
+		}
+
+	});
+
+	// Выбор коэффициента для ставки на событие
 
 	$('.event-koef').on("click", function(event){
 	 	var target = $(event.target);
 		var targetBlock = $(this).parents().closest('tr');
+		if (targetBlock.hasClass('event-block')) {
+			var other = $('.event-other').find('.event-koef-red');
+		} else if (targetBlock.hasClass('event-other')) {
+			var other = $('.event-block').find('.event-koef-red');
+		}
 		var koefs = targetBlock.find('.event-koef-red');
+		koefs = $.merge(other, koefs);
 		if (koefs.length == 0) {
 			target.toggleClass('event-koef-red');
 		} else {
@@ -109,5 +142,11 @@ jQuery(document).ready(function ($) {
 			target.toggleClass('event-koef-red');
 		};
  	});
+
+	$('.event-other-koefs').each(function () {
+		if ($(this).children().length > 0) {
+			$(this).addClass('disabled');
+		}
+	})
 
 });

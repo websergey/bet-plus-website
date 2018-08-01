@@ -24,6 +24,10 @@ a:hover {
 a:active {
   color: #f82516;
 }
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
 
 p {
   font-size: 16px;
@@ -935,7 +939,6 @@ a.filter-item-hour:hover, a.filter-item-date:hover {
   font-weight: 700;
   font-size: 10px;
 }
-
 .show-event {
   float: right;
 }
@@ -972,24 +975,27 @@ a.filter-item-hour:hover, a.filter-item-date:hover {
   padding: 10px;
   padding-right: 0;
 }
-.event-body table td a {
-  display: inline-block;
-  border-radius: 15px;
-  background: #bfc7d5;
-  padding: 5px 10px;
-  max-width: 30px;
-  font-size: 10px;
+.event-body table a {
+  display: block;
+  font-size: 12px;
   font-weight: 700;
   color: #4c566a;
   transition: all .3s ease-in-out;
+  padding: 10px 5px;
+  border-radius: 5px;
+  margin: 5px 3px;
 }
-.event-body table td a:hover {
+.event-body table td {
+  padding: 0;
+  height: 25px;
+}
+.event-body table a:hover {
   color: #fff;
   background: #4c566a;
 }
 .event-body table td a.event-koef-red {
   background: #f82516;
-  box-shadow: 0 2px 10px #f82516;
+  box-shadow: 0 1px 10px #f82516;
   color: #fff;
 }
 .event-body table td a.event-koef-red:hover {
@@ -999,28 +1005,41 @@ a.filter-item-hour:hover, a.filter-item-date:hover {
 .event-body table td.total-koef {
   background: #e4e9f1;
   color: #4c566a;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   transition: background .3s linear;
 }
-.event-body table tbody tr {
+.event-body table tbody .event-block {
   transition: background .3s linear;
   border-bottom: 2px solid #bfc7d5;
 }
-/*.event-body table thead th:nth-child(8) {
-  border-left: 2px solid #4c566a;
-}*/
 .event-body table tbody td:nth-child(8) {
   border-left: 2px solid #bfc7d5;
 }
-.event-body table tbody tr:last-child {
+/*.event-body table tbody + .event-block:last-child {
   border: 0;
-}
+}*/
 .event-body table tbody tr:hover {
   background: #e4e9f1;
 }
 .event-body table tbody tr:hover > td.total-koef{
   background: #bfc7d5;
+}
+.event-body table tbody td a.event-other-koefs {
+  float: right;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  margin-right: 5px;
+  width: 25px;
+  font-size: 12px;
+  background: #e4e9f1;
+}
+.event-body table tbody tr:hover > td a.event-other-koefs {
+  background: #bfc7d5;
+}
+.event-body table tbody tr td a.event-other-koefs:hover {
+  background: #4c566a;
 }
 .event-body table td:not(:first-child), .event-body table th:not(:first-child){
   text-align: center;
@@ -1039,18 +1058,103 @@ a.filter-item-hour:hover, a.filter-item-date:hover {
   display: inline-block;
   margin-left: 10px;
   background: #f82516;
-  box-shadow: 0 1px 7px #f82516;
   color: #fff;
   padding: 3px 7px;
   font-size: 10px;
   border-radius: 15px;
   font-weight: 400;
 }
-.event-body table .event-block td a.event-other-koefs {
-  display: inline-block;
+.event-body table tbody tr.event-other {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  background: #1b263b;
+  border: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all .3s ease-in-out;
+}
+.event-body table tbody tr.event-other-open {
+  position: static;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  transform: scaleX(1);
+  height: auto;
+}
+.event-body table tbody tr.event-other td{
+  padding: 0;
+}
+.event-other-block {
+  color: #fff;
+  padding: 10px;
+  padding-top: 0;
+  font-size: 12px;
+  text-align: left;
+}
+.event-other-wrap {
+  margin: 0 auto;
+  width: 80%;
+}
+.event-other-button {
+  display: block;
+  padding: 10px;
+  background: #fff;
+  color: #1b263b;
+  margin: 0 5px;
+  margin-top: 10px;
+  border-radius: 5px;
   text-align: center;
+  transition: all .3s linear;
+}
+.event-other-button:hover {
+  background: #4c566a;
+  color: #fff;
+}
+.event-other-button-selected {
+  background: #4c566a;
+  color: #fff;
+}
+.event-other-button i {
+  margin-left: 10px;
+  transition: all .3s ease;
+}
+.event-other-category-koefs {
+  display: none;
+  background: #fff;
+  color: #1b263b;
+  margin: 0 5px;
+  overflow: hidden;
+}
+.event-other-container {
+  display: inline-block;
+  vertical-align:top;
+  width: 49%;
+  height: auto;
+}
+.event-other-container .event-other-category-koefs:last-child {
+  border-radius: 0 0 5px 5px;
+}
+.other-grid {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+}
+.other-grid div {
+  display: table-cell;
+  padding: 5px 10px;
+}
+.other-grid-event {
+  width: 80%;
+}
+.other-grid-koef {
+  text-align: center;
+  background: #e4e9f1;
+
+}
+.event-body table .other-grid-koef a {
   margin: 0;
-  font-size: 10px;
+  padding: 5px;
 }
 /*----BETS-CART----*/
 
