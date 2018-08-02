@@ -97,8 +97,10 @@ jQuery(document).ready(function ($) {
 	$('.event-other-koefs').click(function(){
 		var event = $(this).parents('tr.event-block').next('tr.event-other').eq(0);
 		var content = event.find('.event-other-block');
+		var arrow = $(this).find('i.fa-caret-down');
 		event.toggleClass('event-other-open');
 		content.toggleClass('event-other-block-open');
+		arrow.toggleClass('rotate');
 	});
 
 	$('.event-other-button').click(function(){
@@ -118,6 +120,10 @@ jQuery(document).ready(function ($) {
 		}
 
 	});
+
+	// Установка количества доп. коэффициентов
+
+	//$('.event-koef')
 
 	// Выбор коэффициента для ставки на событие
 
@@ -144,9 +150,24 @@ jQuery(document).ready(function ($) {
  	});
 
 	$('.event-other-koefs').each(function () {
-		if ($(this).children().length > 0) {
+		if ($(this).children('i.fa-lock').length > 0) {
 			$(this).addClass('disabled');
 		}
 	})
+
+	$('.event-other').each(function () {
+		var other_koefs = $(this).find('.event-koef');
+		$(this).prev().find('.event-other-koefs-num').html(other_koefs.length);
+	});
+
+	var nav = $('.filters');
+
+	$('.page-content').scroll(function () {
+		if ($(this).scrollTop() > $('#slider').height()) {
+			nav.addClass("fixed-filters");
+		} else {
+			nav.removeClass("fixed-filters");
+		}
+	});
 
 });

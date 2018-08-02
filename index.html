@@ -12,506 +12,711 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <header class="page-header">
-      <nav class="main-menu">
-        <ul class="site-nav">
-          <li class="site-nav-item">
-            <a href="#"><img src="img/logo.png"></a>
-          </li>
-          <li class="site-nav-item">
-            <a href="/line" class="selected-menu-item">Линия</a>
-          </li>
-          <li class="site-nav-item">
-            <a href="/live">LIVE</a>
-          </li>
-          <li class="site-nav-item">
-            <a href="/resluts">Результаты</a>
-          </li>
-          <li class="site-nav-item">
-            <a href="/check-coupon">Проверить купон</a>
-          </li>
-          <li class="user-nav _fright">
-            <a class="user user-img" href="#"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
-            <a class="user user-name" id="user-name" href="#">Степан Иванов</a>
-            <a class="user user-money" id="user-money" href="#">421 304 <i class="fas fa-ruble-sign"></i></a>
-            <div class="user-dropdown">
-              <a class="user user-options-btn" id="user-options" href="#"><i class="fas fa-angle-down"></i></a>
-              <div class="dropdown">
-                <a href="#">Мой профиль</a>
-                <a href="#">Управление балансом</a>
-                <a href="#">История ставок</a>
-                <a href="#">Выйти</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="page-container">
-      <section class="left-menu">
-        <form class="left-menu-form mb-2" action="someaction.php" method="post">
-          <input type="text" name="left-search" id="left-search" placeholder="Поиск категории..." size="17" required autocomplete="off">
-          <button type="submit" for="left-search"><i class="fas fa-search"></i></button>
-        </form>
-        <ul class="left-menu-cats">
-          <li>
-            <a id="cat-football" href="#">
-              <span class="cat-name"><i class="far fa-futbol mr-1"></i>Футбол</span>
-              <span class="cat-count" id="cat-count">214</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-tennis" href="#">
-              <span class="cat-name"><i class="fas fa-solar-panel mr-1"></i>Теннис</span>
-              <span class="cat-count" id="cat-count">152</span>
-            </a>
-          </li>
-          <li id="cat-volleyball">
-            <a id="cat-volleyball" href="#">
-              <span class="cat-name"><i class="fas fa-volleyball-ball mr-1"></i>Воллейбол</span>
-              <span class="cat-count" id="cat-count">42</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-hockey" href="#">
-              <span class="cat-name"><i class="fas fa-hockey-puck mr-1"></i>Хоккей</span>
-              <span class="cat-count" id="cat-count">124</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-cybersport" href="#">
-              <span class="cat-name"><i class="fas fa-gamepad mr-1"></i>Киберспорт</span>
-              <span class="cat-count" id="cat-count">93</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-basketball" href="#">
-              <span class="cat-name"><i class="fas fa-basketball-ball mr-1"></i>Баскетбол</span>
-              <span class="cat-count" id="cat-count">78</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-table-tennis" href="#">
-              <span class="cat-name"><i class="fas fa-table-tennis mr-1"></i>Настольный теннис</span>
-              <span class="cat-count" id="cat-count">5</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-ragby" href="#">
-              <span class="cat-name"><i class="fas fa-football-ball mr-1"></i>Регби</span>
-              <span class="cat-count" id="cat-count">8</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-baseball" href="#">
-              <span class="cat-name"><i class="fas fa-baseball-ball mr-1"></i>Бейсбол</span>
-              <span class="cat-count" id="cat-count">11</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-snuker" href="#">
-              <span class="cat-name"><i class="fas fa-circle mr-1"></i>Снукер</span>
-              <span class="cat-count" id="cat-count">7</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-boks" href="#">
-              <span class="cat-name"><i class="fas fa-hand-rock mr-1"></i>Бокс</span>
-              <span class="cat-count" id="cat-count">16</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-mma" href="#">
-              <span class="cat-name"><i class="fas fa-sign-language mr-1"></i>Единоборства</span>
-              <span class="cat-count" id="cat-count">51</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-biatlon" href="#">
-              <span class="cat-name"><i class="far fa-dot-circle mr-1"></i>Биатлон</span>
-              <span class="cat-count" id="cat-count">11</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-bicycle" href="#">
-              <span class="cat-name"><i class="fas fa-bicycle mr-1"></i>Велоспорт</span>
-              <span class="cat-count" id="cat-count">15</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-formula1" href="#">
-              <span class="cat-name"><i class="fas fa-flag-checkered mr-1"></i>Формула 1</span>
-              <span class="cat-count" id="cat-count">53</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-darts" href="#">
-              <span class="cat-name"><i class="fas fa-bullseye mr-1"></i>Дартс</span>
-              <span class="cat-count" id="cat-count">16</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-skachki" href="#">
-              <span class="cat-name"><i class="fab fa-sticker-mule mr-1"></i>Скачки</span>
-              <span class="cat-count" id="cat-count">134</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-gandball" href="#">
-              <span class="cat-name"><i class="fas fa-swimmer mr-1"></i>Гандбол</span>
-              <span class="cat-count" id="cat-count">9</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-baseball" href="#">
-              <span class="cat-name"><i class="fas fa-highlighter mr-1"></i>Крикет</span>
-              <span class="cat-count" id="cat-count">16</span>
-            </a>
-          </li>
-          <li>
-            <a id="cat-baseball" href="#">
-              <span class="cat-name"><i class="fas fa-golf-ball mr-1"></i>Гольф</span>
-              <span class="cat-count" id="cat-count">31</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-      <div class="page-content">
-        <section id="slider">
-          <ul>
-            <li>
-              <a href="#"></a>
+    <div class="page-wrapper">
+      <header class="page-header">
+        <nav class="main-menu">
+          <ul class="site-nav">
+            <li class="site-nav-item">
+              <a href="#"><img src="img/logo.png"></a>
             </li>
-          </ul>
-        </section>
-        <section class="filters">
-          <ul>
-            <li><a href="#" class="filter-item filter-selected-item">Все</a></li>
-            <li>
-              <div class="filter-dropdown">
-                <a href="#" class="filter-item">По часам <i class="fas fa-angle-down"></i></a>
-                <div class="dropdown filter-dropdown-style">
-                  <a href="#" class="filter-item-hour">< 48</a>
-                  <a href="#" class="filter-item-hour">< 24</a>
-                  <a href="#" class="filter-item-hour">< 12</a>
-                  <a href="#" class="filter-item-hour">< 6</a>
-                  <a href="#" class="filter-item-hour">< 5</a>
-                  <a href="#" class="filter-item-hour">< 4</a>
-                  <a href="#" class="filter-item-hour">< 3</a>
-                  <a href="#" class="filter-item-hour">< 2</a>
-                  <a href="#" class="filter-item-hour">< 1</a>
+            <li class="site-nav-item">
+              <a href="#" class="selected-menu-item">Линия</a>
+            </li>
+            <li class="site-nav-item">
+              <a href="#">LIVE</a>
+            </li>
+            <li class="site-nav-item">
+              <a href="#">Результаты</a>
+            </li>
+            <li class="site-nav-item">
+              <a href="#">Проверить купон</a>
+            </li>
+            <li class="user-nav _fright">
+              <a class="user user-img" href="#"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
+              <a class="user user-name" id="user-name" href="#">Степан Иванов</a>
+              <a class="user user-money" id="user-money" href="#">421 304 <i class="fas fa-ruble-sign"></i></a>
+              <div class="user-dropdown">
+                <a class="user user-options-btn" id="user-options" href="#"><i class="fas fa-angle-down"></i></a>
+                <div class="dropdown">
+                  <a href="#">Мой профиль</a>
+                  <a href="#">Управление балансом</a>
+                  <a href="#">История ставок</a>
+                  <a href="#">Выйти</a>
                 </div>
               </div>
             </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="page-container">
+        <section class="left-menu">
+          <form class="left-menu-form mb-2" action="someaction.php" method="post">
+            <input type="text" name="left-search" id="left-search" placeholder="Поиск категории..." size="17" required autocomplete="off">
+            <button type="submit" for="left-search"><i class="fas fa-search"></i></button>
+          </form>
+          <ul class="left-menu-cats">
             <li>
-              <div class="filter-dropdown">
-                <a href="#" class="filter-item">По дням <i class="fas fa-angle-down"></i></a>
-                <div class="dropdown filter-dropdown-style filter-date"></div>
-              </div>
+              <a id="cat-football" href="#">
+                <span class="cat-name"><i class="far fa-futbol mr-1"></i>Футбол</span>
+                <span class="cat-count" id="cat-count">214</span>
+              </a>
             </li>
             <li>
-              <form class="filter-menu-form" action="someaction.php" method="post">
-                <input type="text" name="filter-search" id="filter-search" placeholder="" required autocomplete="off">
-                <button type="submit" for="filter-search"><i class="fas fa-search"></i></button>
-              </form>
+              <a id="cat-tennis" href="#">
+                <span class="cat-name"><i class="fas fa-solar-panel mr-1"></i>Теннис</span>
+                <span class="cat-count" id="cat-count">152</span>
+              </a>
+            </li>
+            <li id="cat-volleyball">
+              <a id="cat-volleyball" href="#">
+                <span class="cat-name"><i class="fas fa-volleyball-ball mr-1"></i>Воллейбол</span>
+                <span class="cat-count" id="cat-count">42</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-hockey" href="#">
+                <span class="cat-name"><i class="fas fa-hockey-puck mr-1"></i>Хоккей</span>
+                <span class="cat-count" id="cat-count">124</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-cybersport" href="#">
+                <span class="cat-name"><i class="fas fa-gamepad mr-1"></i>Киберспорт</span>
+                <span class="cat-count" id="cat-count">93</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-basketball" href="#">
+                <span class="cat-name"><i class="fas fa-basketball-ball mr-1"></i>Баскетбол</span>
+                <span class="cat-count" id="cat-count">78</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-table-tennis" href="#">
+                <span class="cat-name"><i class="fas fa-table-tennis mr-1"></i>Настольный теннис</span>
+                <span class="cat-count" id="cat-count">5</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-ragby" href="#">
+                <span class="cat-name"><i class="fas fa-football-ball mr-1"></i>Регби</span>
+                <span class="cat-count" id="cat-count">8</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-baseball" href="#">
+                <span class="cat-name"><i class="fas fa-baseball-ball mr-1"></i>Бейсбол</span>
+                <span class="cat-count" id="cat-count">11</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-snuker" href="#">
+                <span class="cat-name"><i class="fas fa-circle mr-1"></i>Снукер</span>
+                <span class="cat-count" id="cat-count">7</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-boks" href="#">
+                <span class="cat-name"><i class="fas fa-hand-rock mr-1"></i>Бокс</span>
+                <span class="cat-count" id="cat-count">16</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-mma" href="#">
+                <span class="cat-name"><i class="fas fa-sign-language mr-1"></i>Единоборства</span>
+                <span class="cat-count" id="cat-count">51</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-biatlon" href="#">
+                <span class="cat-name"><i class="far fa-dot-circle mr-1"></i>Биатлон</span>
+                <span class="cat-count" id="cat-count">11</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-bicycle" href="#">
+                <span class="cat-name"><i class="fas fa-bicycle mr-1"></i>Велоспорт</span>
+                <span class="cat-count" id="cat-count">15</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-formula1" href="#">
+                <span class="cat-name"><i class="fas fa-flag-checkered mr-1"></i>Формула 1</span>
+                <span class="cat-count" id="cat-count">53</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-darts" href="#">
+                <span class="cat-name"><i class="fas fa-bullseye mr-1"></i>Дартс</span>
+                <span class="cat-count" id="cat-count">16</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-skachki" href="#">
+                <span class="cat-name"><i class="fab fa-sticker-mule mr-1"></i>Скачки</span>
+                <span class="cat-count" id="cat-count">134</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-gandball" href="#">
+                <span class="cat-name"><i class="fas fa-swimmer mr-1"></i>Гандбол</span>
+                <span class="cat-count" id="cat-count">9</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-baseball" href="#">
+                <span class="cat-name"><i class="fas fa-highlighter mr-1"></i>Крикет</span>
+                <span class="cat-count" id="cat-count">16</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-baseball" href="#">
+                <span class="cat-name"><i class="fas fa-golf-ball mr-1"></i>Гольф</span>
+                <span class="cat-count" id="cat-count">31</span>
+              </a>
             </li>
           </ul>
         </section>
-        <section class="event-grid">
-          <div class="event-item">
-            <div class="event-head event-selected-item">
-              <div class="event-name">
-                <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
-                <span class="event-count">1543</span>
-                <a class="show-event"><i class="fas fa-angle-down"></i></a>
+        <div class="page-content">
+          <section id="slider">
+            <ul>
+              <li>
+                <a href="#"></a>
+              </li>
+            </ul>
+          </section>
+          <section class="filters">
+            <ul>
+              <li><a href="#" class="filter-item filter-selected-item">Все</a></li>
+              <li>
+                <div class="filter-dropdown">
+                  <a href="#" class="filter-item">По часам <i class="fas fa-angle-down"></i></a>
+                  <div class="dropdown filter-dropdown-style">
+                    <a href="#" class="filter-item-hour">< 48</a>
+                    <a href="#" class="filter-item-hour">< 24</a>
+                    <a href="#" class="filter-item-hour">< 12</a>
+                    <a href="#" class="filter-item-hour">< 6</a>
+                    <a href="#" class="filter-item-hour">< 5</a>
+                    <a href="#" class="filter-item-hour">< 4</a>
+                    <a href="#" class="filter-item-hour">< 3</a>
+                    <a href="#" class="filter-item-hour">< 2</a>
+                    <a href="#" class="filter-item-hour">< 1</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="filter-dropdown">
+                  <a href="#" class="filter-item">По дням <i class="fas fa-angle-down"></i></a>
+                  <div class="dropdown filter-dropdown-style filter-date"></div>
+                </div>
+              </li>
+              <li>
+                <form class="filter-menu-form" action="someaction.php" method="post">
+                  <input type="text" name="filter-search" id="filter-search" placeholder="" required autocomplete="off">
+                  <button type="submit" for="filter-search"><i class="fas fa-search"></i></button>
+                </form>
+              </li>
+            </ul>
+          </section>
+          <section class="event-grid">
+            <div class="event-item">
+              <div class="event-head event-selected-item">
+                <div class="event-name">
+                  <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
+                  <span class="event-count">1543</span>
+                  <a class="show-event"><i class="fas fa-angle-down"></i></a>
+                </div>
               </div>
-            </div>
-            <div class="event-body">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Матч</th>
-                    <th>П1</th>
-                    <th>X</th>
-                    <th>П2</th>
-                    <th>1X</th>
-                    <th>12</th>
-                    <th>2X</th>
-                    <th>ТБ</th>
-                    <th class="total-sign">Тотал</th>
-                    <th>ТМ</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="event-block">
-                    <td>
-                      <a class="event-other-koefs">+ 53</a>
-                      <span class="event-item-name">Реал Мадрид – Барселона</span>
-                      <time>23.10.2018, 18:00</time>
-                    </td>
-                    <td><a class="event-koef" href="#">2.45</a></td>
-                    <td><a class="event-koef" href="#">2.44</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.44</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.44</a></td>
-                    <td class="total-koef"> 2.54 </td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                  </tr>
-                  <tr class="event-other">
-                    <td colspan="10">
-                      <div class="event-other-block">
-                        <div class="event-other-wrap">
-                          <div class="event-other-container">
-                            <div class="event-other-button">
-                              Новые коэффициенты
-                              <i class="fas fa-angle-down"></i>
+              <div class="event-body">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Матч</th>
+                      <th>П1</th>
+                      <th>X</th>
+                      <th>П2</th>
+                      <th>1X</th>
+                      <th>12</th>
+                      <th>2X</th>
+                      <th>ТБ</th>
+                      <th class="total-sign">Тотал</th>
+                      <th>ТМ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="event-block">
+                      <td>
+                        <div class="other-koefs-block">
+                          <div class="event-other-koefs-num">0</div>
+                          <a class="event-other-koefs"><i class="fas fa-caret-down"></i></a>
+                        </div>
+                        <span class="event-item-name">Реал Мадрид – Барселона</span>
+                        <div class="event-info-block">
+                          <time>23.10.2018, 18:00</time>
+                        </div>
+                      </td>
+                      <td><a class="event-koef" href="#">2.45</a></td>
+                      <td><a class="event-koef" href="#">2.44</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.44</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.44</a></td>
+                      <td class="total-koef"> 2.54 </td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                    </tr>
+                    <tr class="event-other">
+                      <td colspan="10">
+                        <div class="event-other-block">
+                          <div class="event-other-wrap">
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
                             </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
                             </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                </div>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="event-other-container">
-                            <div class="event-other-button">
-                              Новые коэффициенты
-                              <i class="fas fa-angle-down"></i>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="event-other-container">
-                            <div class="event-other-button">
-                              Новые коэффициенты
-                              <i class="fas fa-angle-down"></i>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="event-other-container">
-                            <div class="event-other-button">
-                              Новые коэффициенты
-                              <i class="fas fa-angle-down"></i>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
-                                  </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
+                              </div>
                             </div>
                           </div>
-                          <div class="event-other-container">
-                            <div class="event-other-button">
-                              Новые коэффициенты
-                              <i class="fas fa-angle-down"></i>
+                          <div class="event-other-wrap">
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
                             </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                </div>
-                            </div>
-                            <div class="event-other-category-koefs">
-                                <div class="other-grid">
-                                  <div class="other-grid-event">
-                                    Возможная ставка
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
                                   </div>
-                                  <div class="other-grid-koef">
-                                    <a href="#" class="event-koef">2.415</a>
-                                  </div>
-                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr class="event-block">
-                    <td>
-                      <a class="event-other-koefs"><i class="fas fa-lock"></i></a>
-                      <span class="event-item-name event-live">Реал Мадрид – Барселона</span>
-                      <time>23.10.2018, 18:00</time>
-                    </td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.44</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                    <td class="total-koef">2.54</td>
-                    <td><a class="event-koef" href="#">2.54</a></td>
-                  </tr>
-                </tbody>
-              </table>
+                      </td>
+                    </tr>
+                    <tr class="event-block disabled-event">
+                      <td>
+                        <div class="other-koefs-block">
+                          <a class="event-other-koefs"><i class="fas fa-lock"></i></a>
+                        </div>
+                        <span class="event-item-name">Реал Мадрид – Барселона</span>
+                        <div class="event-info-block">
+                          <time>23.10.2018, 18:00</time>
+                          <div class="event-live-info">
+                            <i class="fas fa-clock"></i> <span class="current-time">31'</span>
+                            <span class="current-score">1:0</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.44</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td class="total-koef">2.54</td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                    </tr>
+                    <tr class="event-block">
+                      <td>
+                        <div class="other-koefs-block">
+                          <div class="event-other-koefs-num">0</div>
+                          <a class="event-other-koefs"><i class="fas fa-caret-down"></i></a>
+                        </div>
+                        <span class="event-item-name event-live">Реал Мадрид – Барселона</span>
+                        <div class="event-info-block">
+                          <time>23.10.2018, 18:00</time>
+                          <div class="event-live-info">
+                            <i class="fas fa-clock"></i> <span class="current-time">31'</span>
+                            <span class="current-score">1:0</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.44</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td class="total-koef">2.54</td>
+                      <td><a class="event-koef" href="#">2.54</a></td>
+                    </tr>
+                    <tr class="event-other">
+                      <td colspan="10">
+                        <div class="event-other-block">
+                          <div class="event-other-wrap">
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="event-other-wrap">
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="event-other-container">
+                              <div class="event-other-button">
+                                Новые коэффициенты
+                                <i class="fas fa-angle-down"></i>
+                              </div>
+                              <div class="event-other-category-koefs">
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                                  <div class="other-grid">
+                                    <div class="other-grid-event">
+                                      Возможная ставка
+                                    </div>
+                                    <div class="other-grid-koef">
+                                      <a href="#" class="event-koef">2.415</a>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
-      <section class="right-menu">
-        <div class="coupon-toggle-block mb-2">
-          <ul>
-            <li><a id="coupon-toggle-1" class="toggle-selected" href="#">Экспресс</a></li>
-            <li><a id="coupon-toggle-2" href="#">Ординар</a></li>
-          </ul>
+          </section>
         </div>
-        <form class="right-menu-form mb-2" action="someaction.php" method="post">
-          <div class="coupon-event-container">
+        <section class="right-menu">
+          <div class="coupon-toggle-block mb-2">
             <ul>
-              <li class="coupon-event">
-                <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
-                <div class="coupon-event-name">Реал Мадрид - Барселона</div>
-                <div class="coupon-event-data">
-                  <span class="coupon-event-bet">П1</span>
-                  <span class="coupon-event-koef">x 2.341</span>
-                </div>
-              </li>
-              <li class="coupon-event">
-                <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
-                <div class="coupon-event-name">Реал Мадрид - Барселона</div>
-                <div class="coupon-event-data">
-                  <span class="coupon-event-bet">П1</span>
-                  <span class="coupon-event-koef">x 2.341</span>
-                </div>
-              </li>
+              <li><a id="coupon-toggle-1" class="toggle-selected" href="#">Экспресс</a></li>
+              <li><a id="coupon-toggle-2" href="#">Ординар</a></li>
             </ul>
           </div>
-          <div class="coupon-summary">
-            <div class="summary-koef">
-              Суммарный коэффициент:
-              <div class="summary-koef-num">
-                x
-                <span id="koef-num">4.951</span>
+          <form class="right-menu-form mb-2" action="someaction.php" method="post">
+            <div class="coupon-event-container">
+              <ul>
+                <li class="coupon-event">
+                  <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
+                  <div class="coupon-event-name">Реал Мадрид - Барселона</div>
+                  <div class="coupon-event-data">
+                    <span class="coupon-event-bet">П1</span>
+                    <span class="coupon-event-koef">x 2.341</span>
+                  </div>
+                </li>
+                <li class="coupon-event">
+                  <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
+                  <div class="coupon-event-name">Реал Мадрид - Барселона</div>
+                  <div class="coupon-event-data">
+                    <span class="coupon-event-bet">П1</span>
+                    <span class="coupon-event-koef">x 2.341</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="coupon-summary">
+              <div class="summary-koef">
+                Суммарный коэффициент:
+                <div class="summary-koef-num">
+                  x
+                  <span id="koef-num">4.951</span>
+                </div>
+              </div>
+              <div class="summary-win">Выигрыш:
+                <div class="summary-win-num">
+                  <span id="win-num">4951.00</span>
+                  <i class="fas fa-ruble-sign"></i>
+                </div>
               </div>
             </div>
-            <div class="summary-win">Выигрыш:
-              <div class="summary-win-num">
-                <span id="win-num">4951.00</span>
-                <i class="fas fa-ruble-sign"></i>
+            <div class="bet-input-container mb-2">
+              <label for="bet-sum">Сумма ставки:</label>
+              <input type="text" value="1000" name="bet-sum" id="bet-sum" placeholder="Сумма..." required autocomplete="off" size="8" min="1">
+              <div class="currency-dropdown">
+                <a href="#" class="currency-btn">
+                  <i class="fas fa-ruble-sign"></i>
+                  <i class="fas fa-angle-down"></i>
+                </a>
+                <div class="dropdown currency-dropdown-style">
+                  <a href="#" class="currency-item" id="currency-1"><i class="fas fa-dollar-sign"></i></a>
+                  <a href="#" class="currency-item" id="currency-2"><i class="fas fa-euro-sign"></i></a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="bet-input-container mb-2">
-            <label for="bet-sum">Сумма ставки:</label>
-            <input type="text" value="1000" name="bet-sum" id="bet-sum" placeholder="Сумма..." required autocomplete="off" size="8" min="1">
-            <div class="currency-dropdown">
-              <a href="#" class="currency-btn">
-                <i class="fas fa-ruble-sign"></i>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <div class="dropdown currency-dropdown-style">
-                <a href="#" class="currency-item" id="currency-1"><i class="fas fa-dollar-sign"></i></a>
-                <a href="#" class="currency-item" id="currency-2"><i class="fas fa-euro-sign"></i></a>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-white-red btn-big">Сделать ставку</button>
-        </form>
-      </section>
-    </main>
-    <footer class="">
-    </footer>
+            <button type="submit" class="btn btn-white-red btn-big">Сделать ставку</button>
+          </form>
+        </section>
+      </main>
+      <footer class="page-footer">
+        <div class="footer-social">
+          <ul>
+            <li>
+              <a href="#"><i class="fab fa-vk"></i><a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            </li>
+            <!--<li>
+              <a href="#" class="selected-menu-item">Линия</a>
+            </li>
+            <li>
+              <a href="#">LIVE</a>
+            </li>
+            <li>
+              <a href="#">Результаты</a>
+            </li>
+            <li>
+              <a href="#">Проверить купон</a>
+            </li>-->
+          <ul>
+        </div>
+        <div class="footer-info">
+          <a href="/">bet-plus.ru © 2018</a>
+        </div>
+      </footer>
+    </div>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
