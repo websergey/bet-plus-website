@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type=”text/javascript” src=”http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js”></script>
   </head>
   <body>
     <div class="page-wrapper">
@@ -255,15 +256,15 @@
                           <time>23.10.2018, 18:00</time>
                         </div>
                       </td>
-                      <td><a class="event-koef" href="#">2.45</a></td>
-                      <td><a class="event-koef" href="#">2.44</a></td>
+                      <td><a class="event-koef" href="#">1.01</a></td>
+                      <td><a class="event-koef" href="#">2.02</a></td>
+                      <td><a class="event-koef" href="#">1.54</a></td>
+                      <td><a class="event-koef" href="#">1.76</a></td>
                       <td><a class="event-koef" href="#">2.54</a></td>
-                      <td><a class="event-koef" href="#">2.44</a></td>
-                      <td><a class="event-koef" href="#">2.54</a></td>
-                      <td><a class="event-koef" href="#">2.54</a></td>
-                      <td><a class="event-koef" href="#">2.44</a></td>
+                      <td><a class="event-koef" href="#">3.01</a></td>
+                      <td><a class="event-koef" href="#">2.92</a></td>
                       <td class="total-koef"> 2.54 </td>
-                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">1.01</a></td>
                     </tr>
                     <tr class="event-other">
                       <td colspan="10">
@@ -466,7 +467,7 @@
                           </div>
                         </div>
                       </td>
-                      <td><a class="event-koef" href="#">2.54</a></td>
+                      <td><a class="event-koef" href="#">1.99</a></td>
                       <td><a class="event-koef" href="#">2.54</a></td>
                       <td><a class="event-koef" href="#">2.54</a></td>
                       <td><a class="event-koef" href="#">2.44</a></td>
@@ -636,24 +637,18 @@
             </ul>
           </div>
           <form class="right-menu-form mb-2" action="someaction.php" method="post">
-            <div class="coupon-event-container">
+            <div id="coupon-event-container" class="coupon-event-container">
               <ul>
-                <li class="coupon-event">
-                  <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
-                  <div class="coupon-event-name">Реал Мадрид - Барселона</div>
-                  <div class="coupon-event-data">
-                    <span class="coupon-event-bet">П1</span>
-                    <span class="coupon-event-koef">x 2.341</span>
-                  </div>
-                </li>
-                <li class="coupon-event">
-                  <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
-                  <div class="coupon-event-name">Реал Мадрид - Барселона</div>
-                  <div class="coupon-event-data">
-                    <span class="coupon-event-bet">П1</span>
-                    <span class="coupon-event-koef">x 2.341</span>
-                  </div>
-                </li>
+                <template id="coupon-event-template">
+                  <li class="coupon-event">
+                    <a class="delete-coupon-event" href="#"><i class="fas fa-times"></i></a>
+                    <div class="coupon-event-name"></div>
+                    <div class="coupon-event-data">
+                      <span class="coupon-event-bet">Тип ставки</span>
+                      <span class="coupon-event-koef"></span>
+                    </div>
+                  </li>
+                </template
               </ul>
             </div>
             <div class="coupon-summary">

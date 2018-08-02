@@ -118,34 +118,90 @@ jQuery(document).ready(function ($) {
 			event.slideToggle('fast');
 			$(this).css('border-radius', '5px');
 		}
-
 	});
 
 	// Установка количества доп. коэффициентов
 
-	//$('.event-koef')
+	$('.event-other').each(function () {
+		var other_koefs = $(this).find('.event-koef');
+		$(this).prev().find('.event-other-koefs-num').html(other_koefs.length);
+	});
 
 	// Выбор коэффициента для ставки на событие
+
+	/*var type_arr = [];
+
+	for (var i = 0; $('.event-body thead tr th').length; i++) {
+		type_arr.push($('.event-body thead tr th').eq(i).html());
+	}*/
+
+	var coupon_count = 0;
 
 	$('.event-koef').on("click", function(event){
 	 	var target = $(event.target);
 		var targetBlock = $(this).parents().closest('tr');
+		var koef = $(event.target).html();
+		var name = targetBlock.find('.event-item-name').html();
+		var bet = targetBlock.find('.other-grid-event').html();
+
 		if (targetBlock.hasClass('event-block')) {
-			var other = $('.event-other').find('.event-koef-red');
+			var other = targetBlock.next().find('.event-koef-red');
 		} else if (targetBlock.hasClass('event-other')) {
-			var other = $('.event-block').find('.event-koef-red');
+			name = targetBlock.prev().find('.event-item-name').html();
+			bet = targetBlock.find('.other-grid-event').html();
+			var other = targetBlock.prev().find('.event-koef-red');
 		}
+
+		if ('content' in document.createElement('template')) {
+			var t = $('#coupon-event-template');
+			t.contents().find('.coupon-event-name').html(name);
+			t.contents().find('.coupon-event-koef').html(koef);
+			t.contents().find('.coupon-event-bet').html(bet);
+			var newcoupon = t.contents().eq(1).clone();
+			newcoupon.attr('id', 'coupon-' + coupon_count);
+		}
+
 		var koefs = targetBlock.find('.event-koef-red');
 		koefs = $.merge(other, koefs);
+
 		if (koefs.length == 0) {
+
+			target.data('coupon', newcoupon.attr('id'));
 			target.toggleClass('event-koef-red');
+			$('.coupon-event-container ul').append(newcoupon);
+			coupon_count += 1;
+
 		} else {
+
 			if (target.hasClass('event-koef-red')) {
 				target.toggleClass('event-koef-red');
+				$('.coupon-event-container ul').find('#' + target.data('coupon')).remove();
 				return;
 			}
+
+			if (targetBlock.hasClass('event-block')) {
+				var other = targetBlock.next().find('.event-koef');
+			} else if (targetBlock.hasClass('event-other')) {
+				var other =  targetBlock.prev().find('.event-koef');
+			}
+
+			var coupons = targetBlock.find('.event-koef')
+			coupons = $.merge(other, coupons);
+
+			coupons.each(function () {
+				if ($(this).data('coupon') != target.data('coupon')) {
+					$('.coupon-event-container ul').find('#' + $(this).data('coupon')).remove();
+					$(this).removeData('coupon');
+				}
+			});
+
+			$('.coupon-event-container ul').append(newcoupon);
+			target.data('coupon', newcoupon.attr('id'));
+			coupon_count += 1;
+
 			koefs.removeClass('event-koef-red');
 			target.toggleClass('event-koef-red');
+
 		};
  	});
 
@@ -154,11 +210,6 @@ jQuery(document).ready(function ($) {
 			$(this).addClass('disabled');
 		}
 	})
-
-	$('.event-other').each(function () {
-		var other_koefs = $(this).find('.event-koef');
-		$(this).prev().find('.event-other-koefs-num').html(other_koefs.length);
-	});
 
 	var nav = $('.filters');
 
