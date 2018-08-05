@@ -243,55 +243,15 @@
           </ul>
         </section>
         <div class="page-content">
-          <ul class="user-profile-menu">
-            <li><a href="profile.html" class="selected">Мой профиль</a></li>
-            <li><a href="balance.html">Управление балансом</a></li>
-            <li><a href="history.html">История ставок</a></li>
-            <li><a href="#" class="btn">Выход</a></li>
-          </ul>
           <div class="page-body">
-            <form method="post" action="someaction.php" class="page-form" id="user-password-form">
-              <h3>Изображение профиля</h3>
-              <ul class="user-profile-image-block">
-                <li>
-                  <img src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg" class="user-profile-img">
-                </li>
-                <li>
-                  <label for="user-image" class="page-file-upload">
-                  <input type="file" name="user-image" id="user-image">
-                  Выбрать изображение
-                  </label>
-                </li>
-                <li><button type="submit">Сохранить</button></li>
-              </ul>
-            </form>
             <form method="post" action="someaction.php" class="page-form" id="page-form">
-              <h3>Персональная информация</h3>
-              <div class="input-group">
-                <input type="text" name="user-name" id="user-name" placeholder="Имя">
-                <input type="text" name="user-secname" id="user-secname" placeholder="Фамилия">
+              <div class="user-balance-add">
+                <input type="text" name="balance-add" id="balance-add" placeholder="Введите номер купона" required>
+                <button type="submit">Проверить</button>
               </div>
-              <div class="input-group">
-                <input type="email" name="user-email" id="user-email" placeholder="Введите свой Email">
-                <input type="tel" name="user-phone" id="user-phone" placeholder="Введите свой телефон">
-              </div>
-              <button type="submit">Сохранить</button>
-            </form>
-            <form method="post" action="someaction.php" class="page-form" id="user-password-form">
-              <h3>Задать пароль</h3>
-              <div class="input-group">
-                <input type="email" name="user-pass" id="user-pass" placeholder="Пароль">
-                <input type="tel" name="user-confirm-pass" id="user-confirm-pass" placeholder="Повторите пароль">
-              </div>
-              <button type="submit">Изменить пароль</button>
             </form>
             <div class="profile-info">
-              <p>К вашему аккаунту привязана авторизация через социальную сеть <strong>vkontakte</strong>.</p>
-              <p>Ваша персональная страница: <strong>http://vk.com/id2343423</strong></p>
-            </div>
-            <div class="profile-info profile-green-info">
-              <p>Вы были зарегистрированы на сайте: <strong>24.07.2018 10:49</strong></p>
-              <p>IP-адрес используемый при регистрации: <strong>11.22.221.43</strong></p>
+              Введите номер купона, чтобы узнать его статус
             </div>
           </div>
         </div>
