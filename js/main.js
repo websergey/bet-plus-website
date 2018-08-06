@@ -1,3 +1,16 @@
+jQuery.fn.extend({
+    unwrapInner: function(selector) {
+        return this.each(function() {
+            var t = this,
+                c = $(t).children(selector);
+            if (c.length === 1) {
+                c.contents().appendTo(t);
+                c.remove();
+            }
+        });
+    }
+});
+
 jQuery(document).ready(function ($) {
 
 	// Выбор валюты для ставки в купоне
@@ -288,5 +301,42 @@ jQuery(document).ready(function ($) {
 		temp.setDate(now.getDate() + i);
 		$('.filter-date').append('<a class="filter-item-date" href="#">' + formatDate(temp) + '</a>');
 	}
+
+	$(window).bind("resize", checkPosition);
+
+	function checkPosition()
+	{
+	    if($(window).width() < 620)
+	    {
+				if ($('.koef-type').length == 0) {
+		      $('.event-koef').each(function () {
+		      	$(this).parent().prepend('<span class="koef-type">' + $(this).data('type') + '</span>');
+		      });
+					$('.total-koef').each(function () {
+						$(this).wrapInner('<div></div>')
+						$(this).prepend('<span class="koef-type-total">Тотал</span>');
+					});
+					$('.event-block').each(function () {
+						var childs = $(this).children().eq(1);
+						for (var i = 2; i < 9; i++) {
+							childs = $.merge(childs, $(this).children().eq(i));
+						}
+						childs.wrapAll('<div class="mobile-koefs"></div>');
+					});
+				}
+	    } else {
+				$('.koef-type').each(function () {
+					$(this).remove();
+				});
+				$('.koef-type-total').each(function () {
+					$(this).remove();
+				});
+				$('.total-koef').each(function () {
+					$(this).unwrapInner();
+				});
+	    }
+	}
+
+	checkPosition();
 
 });

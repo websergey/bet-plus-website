@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>BET+ ставки на любые события в мире</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  </head>
+  <body>
+    <div id="reg" class="modal">
+      <form action="someaction.php" method="post" class="modalform">
+        <h3>Регистрация</h3>
+        <input type="text" placeholder="Имя" required>
+        <input type="text" placeholder="Фамилия" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" name="reg-phone" id="reg-phone" placeholder="Номер телефона" required>
+        <input type="password" name="reg-password" id="reg-password" placeholder="Пароль" required>
+        <input type="password" name="reg-confirm_password" id="reg-confirm_password" placeholder="Повторите пароль" required>
+        <button type="submit">Регистрация</button>
+        <a href="#forgot" rel="modal:open">Забыл пароль</a>
+      </form>
+    </div>
+    <div id="forgot" class="modal">
+      <form action="someaction.php" method="post" class="modalform">
+        <h3>Восстановление пароля</h3>
+        <input type="email" name="reg-email" id="reg-email" placeholder="Email" required>
+        <button type="submit">Восстановить пароль</button>
+        <a href="#login" rel="modal:open">Вход</a>
+        <a href="#reg" rel="modal:open">Регистрация</a>
+      </form>
+    </div>
+    <div id="login" class="modal">
+      <form action="someaction.php" method="post" class="modalform">
+        <h3>Вход</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-vk"></i></a></li>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-odnoklassniki-square"></i></a></li>
+          <li><a href="#"><i class="fab fa-google"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fab fa-steam-square"></i></a></li>
+          <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+        </ul>
+        <input type="email" name="login-email" id="login-email" placeholder="Email" required>
+        <input type="password" name="login-password" id="login-password" placeholder="Пароль" required>
+        <button type="submit">Войти</button>
+        <a href="#reg" rel="modal:open">Регистрация</a>
+      </form>
+    </div>
+    <div class="page-wrapper">
+      <header class="page-header">
+        <nav class="main-menu">
+          <ul class="site-nav">
+            <li class="site-nav-item">
+              <a href="index.html"><img src="img/logo.png"></a>
+            </li>
+            <li class="site-nav-item">
+              <a href="index.html" class="selected-menu-item">Линия</a>
+            </li>
+            <li class="site-nav-item">
+              <a href="#">LIVE</a>
+            </li>
+            <li class="site-nav-item">
+              <a href="#">Результаты</a>
+            </li>
+            <li class="site-nav-item">
+              <a href="check.html">Проверить купон</a>
+            </li>
+            <li class="user-nav _fright">
+              <div class="time-dropdown">
+              <div class="user-time-block">
+                <i class="fas fa-clock"></i>
+                <span class="user-time">12:34</span>
+                  <a href="#" class="user-time-change"><i class="fas fa-angle-down"></i></a>
+                  <div class="dropdown time-dropdown-style">
+                    <a href="#">Нью-Йорк</a>
+                    <a href="#">Токио</a>
+                    <a href="#">Москва</a>
+                    <a href="#">Минск</a>
+                    <a href="#">Киев</a>
+                    <a href="#">Калининград</a>
+                    <a href="#">Самара</a>
+                    <a href="#">Лиссабон</a>
+                    <a href="#">Истамбул</a>
+                  </div>
+                </div>
+              </div>
+              <!--<div class="user-auth">
+                <a class="btn btn-red" href="#login" rel="modal:open">Вход</a>
+                <a class="btn" href="#reg" rel="modal:open">Регистрация</a>
+              </div>-->
+              <a class="user user-img" href="profile.html"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
+              <a class="user user-name" id="user-name" href="profile.html">Степан Иванов</a>
+              <a class="user user-money" id="user-money" href="balance.html">421 304 <i class="fas fa-ruble-sign"></i></a>
+              <div class="user-dropdown">
+                <a class="user user-options-btn" id="user-options" href="#"><i class="fas fa-angle-down"></i></a>
+                <div class="dropdown">
+                  <a href="profile.html">Мой профиль</a>
+                  <a href="balance.html">Управление балансом</a>
+                  <a href="history.html">История ставок</a>
+                  <a href="#">Выйти</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="page-container">
+        <section class="left-menu">
+          <form class="left-menu-form mb-2" action="someaction.php" method="post">
+            <input type="text" name="left-search" id="left-search" placeholder="Поиск категории..." size="17" required autocomplete="off">
+            <button type="submit" for="left-search"><i class="fas fa-search"></i></button>
+          </form>
+          <ul class="left-menu-cats">
+            <li>
+              <a id="cat-football" href="#">
+                <span class="cat-name"><i class="far fa-futbol mr-1"></i>Футбол</span>
+                <span class="cat-count" id="cat-count">214</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-tennis" href="#">
+                <span class="cat-name"><i class="fas fa-solar-panel mr-1"></i>Теннис</span>
+                <span class="cat-count" id="cat-count">152</span>
+              </a>
+            </li>
+            <li id="cat-volleyball">
+              <a id="cat-volleyball" href="#">
+                <span class="cat-name"><i class="fas fa-volleyball-ball mr-1"></i>Воллейбол</span>
+                <span class="cat-count" id="cat-count">42</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-hockey" href="#">
+                <span class="cat-name"><i class="fas fa-hockey-puck mr-1"></i>Хоккей</span>
+                <span class="cat-count" id="cat-count">124</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-cybersport" href="#">
+                <span class="cat-name"><i class="fas fa-gamepad mr-1"></i>Киберспорт</span>
+                <span class="cat-count" id="cat-count">93</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-basketball" href="#">
+                <span class="cat-name"><i class="fas fa-basketball-ball mr-1"></i>Баскетбол</span>
+                <span class="cat-count" id="cat-count">78</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-table-tennis" href="#">
+                <span class="cat-name"><i class="fas fa-table-tennis mr-1"></i>Настольный теннис</span>
+                <span class="cat-count" id="cat-count">5</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-ragby" href="#">
+                <span class="cat-name"><i class="fas fa-football-ball mr-1"></i>Регби</span>
+                <span class="cat-count" id="cat-count">8</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-baseball" href="#">
+                <span class="cat-name"><i class="fas fa-baseball-ball mr-1"></i>Бейсбол</span>
+                <span class="cat-count" id="cat-count">11</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-snuker" href="#">
+                <span class="cat-name"><i class="fas fa-circle mr-1"></i>Снукер</span>
+                <span class="cat-count" id="cat-count">7</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-boks" href="#">
+                <span class="cat-name"><i class="fas fa-hand-rock mr-1"></i>Бокс</span>
+                <span class="cat-count" id="cat-count">16</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-mma" href="#">
+                <span class="cat-name"><i class="fas fa-sign-language mr-1"></i>Единоборства</span>
+                <span class="cat-count" id="cat-count">51</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-biatlon" href="#">
+                <span class="cat-name"><i class="far fa-dot-circle mr-1"></i>Биатлон</span>
+                <span class="cat-count" id="cat-count">11</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-bicycle" href="#">
+                <span class="cat-name"><i class="fas fa-bicycle mr-1"></i>Велоспорт</span>
+                <span class="cat-count" id="cat-count">15</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-formula1" href="#">
+                <span class="cat-name"><i class="fas fa-flag-checkered mr-1"></i>Формула 1</span>
+                <span class="cat-count" id="cat-count">53</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-darts" href="#">
+                <span class="cat-name"><i class="fas fa-bullseye mr-1"></i>Дартс</span>
+                <span class="cat-count" id="cat-count">16</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-skachki" href="#">
+                <span class="cat-name"><i class="fab fa-sticker-mule mr-1"></i>Скачки</span>
+                <span class="cat-count" id="cat-count">134</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-gandball" href="#">
+                <span class="cat-name"><i class="fas fa-swimmer mr-1"></i>Гандбол</span>
+                <span class="cat-count" id="cat-count">9</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-baseball" href="#">
+                <span class="cat-name"><i class="fas fa-highlighter mr-1"></i>Крикет</span>
+                <span class="cat-count" id="cat-count">16</span>
+              </a>
+            </li>
+            <li>
+              <a id="cat-baseball" href="#">
+                <span class="cat-name"><i class="fas fa-golf-ball mr-1"></i>Гольф</span>
+                <span class="cat-count" id="cat-count">31</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <div class="page-content">
+          <form method="post" action="someaction.php" id="results-form">
+          <ul class="user-profile-menu">
+            <li>
+              <select>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+            </li>
+            <li>
+              <input type="date">
+            </li>
+            <li>
+              <select>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+            </li>
+            <li>
+              <button class="btn btn-red">Применить фильтр</button>
+            </li>
+          </ul>
+          <div class="page-body">
+            <h3>История ставок</h3>
+              <div class="bet-history-item item-wait">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                <span class="history-sum">
+                  2 354 <i class="fas fa-ruble-sign"></i>
+                </span>
+
+                <span class="history-event">Реал Мадрид - Барселона</span>
+                <span class="history-event-type">П1</span>
+                <span class="history-event-time">19:00</span>
+                <span class="history-date">23.05.2018</span>
+              </div>
+              <div class="bet-history-item item-win">
+                <i class="fas fa-plus"></i>
+                <span class="history-sum">
+                  2 354 <i class="fas fa-ruble-sign"></i>
+                </span>
+                <span class="history-event">Реал Мадрид - Барселона</span>
+                <span class="history-event-type">П1</span>
+                <span class="history-event-time">19:00</span>
+                <span class="history-date">23.05.2018</span>
+              </div>
+              <div class="bet-history-item item-lose">
+                <i class="fas fa-minus"></i>
+                <span class="history-sum">
+                  5 313 <i class="fas fa-ruble-sign"></i>
+                </span>
+                <span class="history-event">Реал Мадрид - Барселона</span>
+                <span class="history-event-type">П1</span>
+                <span class="history-event-time">19:00</span>
+                <span class="history-date">23.05.2018</span>
+              </div>
+              <div class="bet-history-item item-win">
+                <i class="fas fa-plus"></i>
+                <span class="history-sum">
+                  10 433 <i class="fas fa-ruble-sign"></i>
+                </span>
+                <span class="history-event">Реал Мадрид - Барселона</span>
+                <span class="history-event-type">П1</span>
+                <span class="history-event-time">19:00</span>
+                <span class="history-date">23.05.2018</span>
+              </div>
+              <div class="bet-history-item item-lose">
+                <i class="fas fa-minus"></i>
+                <span class="history-sum">
+                  5 313 <i class="fas fa-ruble-sign"></i>
+                </span>
+                <span class="history-event">Реал Мадрид - Барселона</span>
+                <span class="history-event-type">П1</span>
+                <span class="history-event-time">19:00</span>
+                <span class="history-date">23.05.2018</span>
+              </div>
+              <div class="bet-history-item item-win">
+                <i class="fas fa-plus"></i>
+                <span class="history-sum">
+                  10 433 <i class="fas fa-ruble-sign"></i>
+                </span>
+                <span class="history-event">Реал Мадрид - Барселона</span>
+                <span class="history-event-type">П1</span>
+                <span class="history-event-time">19:00</span>
+                <span class="history-date">23.05.2018</span>
+              </div>
+              <div class="bet-history-item item-win">
+                <i class="fas fa-plus"></i>
+                <span class="history-sum">
+                  10 433 <i class="fas fa-ruble-sign"></i>
+                </span>
+                <span class="history-event">Реал Мадрид - Барселона</span>
+                <span class="history-event-type">П1</span>
+                <span class="history-event-time">19:00</span>
+                <span class="history-date">23.05.2018</span>
+              </div>
+          </div>
+        </div>
+      </main>
+      <footer class="page-footer">
+        <div class="footer-social">
+          <ul>
+            <li>
+              <a href="#"><i class="fab fa-vk"></i><a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            </li>
+            <!--<li>
+              <a href="#" class="selected-menu-item">Линия</a>
+            </li>
+            <li>
+              <a href="#">LIVE</a>
+            </li>
+            <li>
+              <a href="#">Результаты</a>
+            </li>
+            <li>
+              <a href="#">Проверить купон</a>
+            </li>-->
+          <ul>
+        </div>
+        <div class="footer-info">
+          <a href="/">bet-plus.ru © 2018</a>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>

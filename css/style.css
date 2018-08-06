@@ -1693,7 +1693,6 @@ select::-ms-expand {
   float: right;
 }
 .history-sum {
-  width: 100px;
   font-weight: 700;
 }
 .bet-history-item {
@@ -1723,6 +1722,81 @@ select::-ms-expand {
   background: #d6dff2;
   color: #243f52;
 }
-.item-wait i.fa-circle-notch {
+.bet-history-item i {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  html, body, .page-header, .main-menu {
+    min-width: 600px;
+    max-width: 768px;
+  }
+  .left-menu, .right-menu, .site-nav-item:not(:first-child), #slider, .site-nav .user-nav {
+    display: none;
+  }
+  .page-content {
+    min-width: auto;
+    flex-grow: 1;
+  }
+  .filters {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    box-shadow: 0 3px 30px #0d1b2a;
+  }
+  .filters ul li:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 620px) {
+  html, body, .page-header, .main-menu {
+    min-width: 420px;
+  }
+  .event-body td, .event-body tr, .event-body table, .event-body tbody {
+    display: block;
+  }
+  .event-body th {
+    display: none;
+  }
+  .event-body td:first-child {
+    margin-bottom: 10px;
+  }
+  .event-body td:not(:first-child) {
+    display: inline-block;
+    height: auto;
+    margin-left: 5px;
+  }
+  .event-body td:not(:first-child) a {
+    display: block;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  .event-body table tbody tr.event-other td {
+    height: auto;
+  }
+  .event-other-wrap {
+    width: 48%;
+  }
+  .other-grid-event {
+    width: auto;
+  }
+  .koef-type, .koef-type-total {
+    display: block;
+    background: #bfc7d5;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #4c566a;
+  }
+  .koef-type-total {
+    margin-bottom: 5px;
+  }
+  .event-body table td.total-koef div {
+    margin: 10px;
+  }
+  .mobile-koefs {
+    display: block;
+    height: auto;
+    overflow-x: auto;
+  }
 }
