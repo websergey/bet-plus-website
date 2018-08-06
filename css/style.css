@@ -131,6 +131,24 @@ h3 {
 	background: #0d1b2a;
 }
 
+.mobile-koefs::-webkit-scrollbar {
+  height: 5px;
+  background: #e4e9f1;
+  border-radius: 5px;
+}
+.mobile-koefs::-webkit-scrollbar-track {
+  height: 5px;
+  background: #e4e9f1;
+  border-radius: 5px;
+}
+.mobile-koefs::-webkit-scrollbar-thumb {
+  background: #bfc7d5;
+  border-radius: 5px;
+}
+.mobile-koefs::-webkit-scrollbar-thumb:window-inactive {
+	background: #e4e9f1;
+}
+
 .ruble:after {
      content:"\20BD";
 }
@@ -924,6 +942,7 @@ a.control_next {
 }
 .fixed-filters {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   z-index: 5;
   box-shadow: 0 3px 30px #0d1b2a;
@@ -1476,6 +1495,7 @@ footer.page-footer div.footer-info a {
 .page-content .user-profile-menu {
   display: block;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   z-index: 5;
   margin: 0;
@@ -1731,7 +1751,8 @@ select::-ms-expand {
     min-width: 600px;
     max-width: 768px;
   }
-  .left-menu, .right-menu, .site-nav-item:not(:first-child), #slider, .site-nav .user-nav {
+  .left-menu, .right-menu, .site-nav-item:not(:first-child),
+  .site-nav-item:not(:last-child), #slider, .site-nav .user-nav {
     display: none;
   }
   .page-content {
@@ -1740,6 +1761,7 @@ select::-ms-expand {
   }
   .filters {
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     z-index: 5;
     box-shadow: 0 3px 30px #0d1b2a;
@@ -1750,29 +1772,54 @@ select::-ms-expand {
 }
 @media screen and (max-width: 620px) {
   html, body, .page-header, .main-menu {
-    min-width: 420px;
+    min-width: 320px;
   }
-  .event-body td, .event-body tr, .event-body table, .event-body tbody {
+  .event-block td, .event-body tr, .event-body table, .event-body tbody {
     display: block;
   }
-  .event-body th {
+  .event-body th, footer {
     display: none;
   }
-  .event-body td:first-child {
-    margin-bottom: 10px;
-  }
-  .event-body td:not(:first-child) {
+  .event-body td a {
     display: inline-block;
-    height: auto;
-    margin-left: 5px;
-  }
-  .event-body td:not(:first-child) a {
-    display: block;
     padding: 5px;
     margin-top: 5px;
   }
+  .main-menu {
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 100;
+    top: 0;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  li.site-nav-item:first-child img {
+    width: 70px;
+    top: 15px;
+    left: 15px;
+  }
+  .event-body table tbody tr:hover {
+    background: none;
+  }
+  .page-wrapper {
+    position: relative;
+    margin-top: 50px;
+  }
+  .page-content {
+    margin: 0;
+    overflow-y: visible;
+    min-width: 320px;
+  }
+  .page-container {
+    margin-top: 0px;
+    overflow: visible;
+  }
   .event-body table tbody tr.event-other td {
     height: auto;
+    width: 100%;
+    display: block;
   }
   .event-other-wrap {
     width: 48%;
@@ -1782,21 +1829,63 @@ select::-ms-expand {
   }
   .koef-type, .koef-type-total {
     display: block;
+    text-align: center;
     background: #bfc7d5;
-    border-radius: 5px;
     font-size: 10px;
     font-weight: 600;
     color: #4c566a;
+    border-radius: 5px;
+    padding: 5px;
   }
   .koef-type-total {
-    margin-bottom: 5px;
+    background: #e4e9f1;
   }
   .event-body table td.total-koef div {
     margin: 10px;
   }
   .mobile-koefs {
-    display: block;
-    height: auto;
+    margin: 10px;
+    white-space: nowrap;
     overflow-x: auto;
+  }
+  .event-body table .mobile-koefs td {
+    display: inline-block;
+    width: auto;
+    padding: 0 3px;
+  }
+  .event-body table .mobile-koefs td:first-child {
+    padding-left: 0;
+  }
+  .event-body table tbody td:nth-child(8) {
+    border: 0;
+  }
+  .event-body table tbody td:nth-child(7) {
+    border-left: 2px solid #bfc7d5;
+  }
+  .event-body table td.total-koef {
+    color: #a4aebf;
+    border-radius: 5px 5px 0 0;
+  }
+  .event-body table td {
+    height: auto;
+  }
+  .event-other-block {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+  .event-other-wrap .other-grid div {
+    padding: 3px;
+    text-align: center;
+  }
+  .page-content {
+    border-radius: 0;
+  }
+  .event-grid {
+    margin-top: 0;
+  }
+  .filters {
+    border-radius: 0;
+    transition: all .5s ease;
   }
 }

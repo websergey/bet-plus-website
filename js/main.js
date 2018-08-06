@@ -280,6 +280,14 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+  $(window).scroll(function () {
+    if($(window).width() < 620 && $(window).scrollTop() > 0) {
+        nav.css('top', '50px')
+      } else {
+        nav.css('top', '');
+      }
+  });
+
 	// Добавление последних дат в фильтр
 
 	function formatDate(date) {
@@ -309,7 +317,7 @@ jQuery(document).ready(function ($) {
 	    if($(window).width() < 620)
 	    {
 				if ($('.koef-type').length == 0) {
-		      $('.event-koef').each(function () {
+		      $('.event-block .event-koef').each(function () {
 		      	$(this).parent().prepend('<span class="koef-type">' + $(this).data('type') + '</span>');
 		      });
 					$('.total-koef').each(function () {
@@ -318,11 +326,12 @@ jQuery(document).ready(function ($) {
 					});
 					$('.event-block').each(function () {
 						var childs = $(this).children().eq(1);
-						for (var i = 2; i < 9; i++) {
+						for (var i = 2; i < 10; i++) {
 							childs = $.merge(childs, $(this).children().eq(i));
 						}
 						childs.wrapAll('<div class="mobile-koefs"></div>');
 					});
+          nav.addClass("fixed-filters");
 				}
 	    } else {
 				$('.koef-type').each(function () {
@@ -334,6 +343,10 @@ jQuery(document).ready(function ($) {
 				$('.total-koef').each(function () {
 					$(this).unwrapInner();
 				});
+        $('.mobile-koefs').each(function () {
+          $('.mobile-koefs').find('td').unwrap();
+        });
+        nav.removeClass("fixed-filters");
 	    }
 	}
 
