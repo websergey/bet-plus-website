@@ -11,6 +11,12 @@ jQuery.fn.extend({
     }
 });
 
+$(window).on('load', function() {
+  setTimeout(function() {
+    $('#preloader').fadeOut('fast', function() {});
+  }, 700);
+});
+
 jQuery(document).ready(function ($) {
 
 	// Выбор валюты для ставки в купоне
@@ -110,6 +116,10 @@ jQuery(document).ready(function ($) {
 		}
 	  event.slideToggle('normal');
 	});
+
+  $('.user-mobile-time').click(function() {
+    $('.user-mobile-dropdown').slideToggle('fast');
+  });
 
 	// Открытие доп. меню событий
 
@@ -257,7 +267,8 @@ jQuery(document).ready(function ($) {
 
 			checkCoupons();
 
-		};
+		}
+    checkBetsCount();
  	});
 
 	// Отключение дополнительного меню ставок для неактивного события
@@ -279,14 +290,6 @@ jQuery(document).ready(function ($) {
 			nav.removeClass("fixed-filters");
 		}
 	});
-
-  $(window).scroll(function () {
-    if($(window).width() < 620 && $(window).scrollTop() > 0) {
-        nav.css('top', '50px')
-      } else {
-        nav.css('top', '');
-      }
-  });
 
 	// Добавление последних дат в фильтр
 
@@ -310,46 +313,82 @@ jQuery(document).ready(function ($) {
 		$('.filter-date').append('<a class="filter-item-date" href="#">' + formatDate(temp) + '</a>');
 	}
 
-	$(window).bind("resize", checkPosition);
+	$(window).bind('resize', checkPosition);
+
+  function checkBetsCount() {
+    if ($('.coupon-event').length == 0) {
+      $('#bets-count').html('Выбери события');
+    } else {
+      $('#bets-count').html($('.coupon-event').length);
+    }
+  }
 
 	function checkPosition()
 	{
-	    if($(window).width() < 620)
-	    {
-				if ($('.koef-type').length == 0) {
-		      $('.event-block .event-koef').each(function () {
-		      	$(this).parent().prepend('<span class="koef-type">' + $(this).data('type') + '</span>');
-		      });
-					$('.total-koef').each(function () {
-						$(this).wrapInner('<div></div>')
-						$(this).prepend('<span class="koef-type-total">Тотал</span>');
-					});
-					$('.event-block').each(function () {
-						var childs = $(this).children().eq(1);
-						for (var i = 2; i < 10; i++) {
-							childs = $.merge(childs, $(this).children().eq(i));
-						}
-						childs.wrapAll('<div class="mobile-koefs"></div>');
-					});
-          nav.addClass("fixed-filters");
-				}
-	    } else {
-				$('.koef-type').each(function () {
-					$(this).remove();
-				});
-				$('.koef-type-total').each(function () {
-					$(this).remove();
-				});
-				$('.total-koef').each(function () {
-					$(this).unwrapInner();
-				});
-        $('.mobile-koefs').each(function () {
-          $('.mobile-koefs').find('td').unwrap();
-        });
-        nav.removeClass("fixed-filters");
-	    }
+    if ($(window).width() < 769) {
+      if ($('.koef-type').length == 0) {
+          $('.event-block .event-koef').each(function () {
+            $(this).parent().prepend('<span class="koef-type">' + $(this).data('type') + '</span>');
+          });
+          $('.total-koef').each(function () {
+            $(this).wrapInner('<div></div>')
+            $(this).prepend('<span class="koef-type-total">Тотал</span>');
+          });
+          $('.event-block').each(function () {
+            var childs = $(this).children().eq(1);
+            for (var i = 2; i < 10; i++) {
+              childs = $.merge(childs, $(this).children().eq(i));
+            }
+            childs.wrapAll('<div class="mobile-koefs"></div>');
+          });
+        }
+      if ($('#left-toggle').length == 0) $('.site-nav').prepend('<li class="site-nav-item" id="left-toggle"><i class="fas fa-bars"></i></li>');
+      if ($('#right-toggle').length == 0) $('.site-nav').append('<li class="site-nav-item" id="right-toggle"><i class="fas fa-user"></i></li>');
+      if ($('#left-close').length == 0) $('.left-menu').prepend('<a class="closebtn" id="left-close"><i class="fas fa-angle-left"></i></a>');
+      if ($('#coupon-close').length == 0) $('.right-menu').prepend('<a class="closebtn" id="coupon-close"><i class="fas fa-angle-left"></i></a>');
+      if ($('#right-close').length == 0) $('.user-menu-mobile').prepend('<a class="closebtn" id="right-close"><i class="fas fa-angle-left"></i></a>');
+      $('#coupon-toggle').show();
+      checkBetsCount();
+      $('#left-toggle').click(function () {
+        $('.left-menu').toggleClass('menu-open')
+      });
+      $('#right-toggle').click(function () {
+        $('.user-menu-mobile').toggleClass('menu-open')
+      });
+      $('#coupon-toggle').click(function () {
+        $('.right-menu').toggleClass('menu-open')
+      });
+      $('#left-close').click(function () {
+        $('.left-menu').toggleClass('menu-open')
+      });
+      $('#right-close').click(function () {
+        $('.user-menu-mobile').toggleClass('menu-open')
+      });
+      $('#coupon-close').click(function () {
+        $('.right-menu').toggleClass('menu-open')
+      });
+    } else {
+      $('.koef-type').each(function () {
+        $(this).remove();
+      });
+      $('.koef-type-total').each(function () {
+        $(this).remove();
+      });
+      $('.total-koef').each(function () {
+        $(this).unwrapInner();
+      });
+      $('.mobile-koefs').each(function () {
+        $('.mobile-koefs').find('td').unwrap();
+      });
+      $('.site-nav').children('#left-toggle').remove();
+      $('.site-nav').children('#right-toggle').remove();
+      $('.site-nav').children('#coupon-toggle').remove();
+      $('.left-menu').removeClass('menu-open');
+      $('.right-menu').removeClass('menu-open');
+      $('.user-menu-mobile').removeClass('menu-open');
+      $('#coupon-toggle').hide();
+      $('.closebtn').remove();
+    }
 	}
-
 	checkPosition();
-
 });

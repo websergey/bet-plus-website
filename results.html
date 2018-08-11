@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BET+ ставки на любые события в мире</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -14,6 +15,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   </head>
   <body>
+    <div id="preloader">
+      <i class="fas fa-circle-notch fa-spin"></i>
+    </div>
     <div id="reg" class="modal">
       <form action="someaction.php" method="post" class="modalform">
         <h3>Регистрация</h3>
@@ -53,6 +57,7 @@
         <input type="password" name="login-password" id="login-password" placeholder="Пароль" required>
         <button type="submit">Войти</button>
         <a href="#reg" rel="modal:open">Регистрация</a>
+        <a href="#forgot" rel="modal:open">Забыл пароль</a>
       </form>
     </div>
     <div class="page-wrapper">
@@ -93,11 +98,11 @@
                   </div>
                 </div>
               </div>
-              <!--<div class="user-auth">
+              <div class="user-auth">
                 <a class="btn btn-red" href="#login" rel="modal:open">Вход</a>
                 <a class="btn" href="#reg" rel="modal:open">Регистрация</a>
-              </div>-->
-              <a class="user user-img" href="profile.html"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
+              </div>
+              <!--<a class="user user-img" href="profile.html"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
               <a class="user user-name" id="user-name" href="profile.html">Степан Иванов</a>
               <a class="user user-money" id="user-money" href="balance.html">421 304 <i class="fas fa-ruble-sign"></i></a>
               <div class="user-dropdown">
@@ -108,7 +113,7 @@
                   <a href="history.html">История ставок</a>
                   <a href="#">Выйти</a>
                 </div>
-              </div>
+              </div>-->
             </li>
           </ul>
         </nav>
@@ -345,6 +350,45 @@
               </div>
           </div>
         </div>
+        <section class="user-menu-mobile">
+          <div class="user-mobile-wrapper">
+            <div class="user-menu-info">
+              <a class="btn btn-red" href="#login" rel="modal:open">Вход</a>
+              <a class="btn" href="#reg" rel="modal:open">Регистрация</a>
+              <!--<a href="profile.html"><img id="user-img-mobile" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
+              <a id="user-name-mobile" href="profile.html">Степан Иванов</a>
+              <a id="user-money-mobile" href="balance.html">421 304 <i class="fas fa-ruble-sign"></i></a>
+              <div class="user-mobile-options">
+                <a href="profile.html">Мой профиль</a>
+                <a href="balance.html">Управление балансом</a>
+                <a href="history.html">История ставок</a>
+                <a href="#">Выйти</a>
+              </div>-->
+            </div>
+            <div class="user-main-menu">
+              <a href="index.html" class="selected-menu-item">Линия</a>
+              <a href="#">LIVE</a>
+              <a href="results.html">Результаты</a>
+              <a href="check.html">Проверить купон</a>
+            </div>
+            <div class="user-mobile-time">
+              <i class="fas fa-clock"></i>
+              <span class="user-mobile-time-num">12:34</span>
+              <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="user-mobile-dropdown">
+              <a href="#">Нью-Йорк</a>
+              <a href="#">Токио</a>
+              <a href="#">Москва</a>
+              <a href="#">Минск</a>
+              <a href="#">Киев</a>
+              <a href="#">Калининград</a>
+              <a href="#">Самара</a>
+              <a href="#">Лиссабон</a>
+              <a href="#">Истамбул</a>
+            </div>
+          </div>
+        </section>
       </main>
       <footer class="page-footer">
         <div class="footer-social">
