@@ -68,13 +68,13 @@
               <a href="index.html"><img src="img/logo.png"></a>
             </li>
             <li class="site-nav-item">
-              <a href="index.html" class="selected-menu-item">Линия</a>
+              <a href="index.html">Линия</a>
             </li>
             <li class="site-nav-item">
               <a href="#">LIVE</a>
             </li>
             <li class="site-nav-item">
-              <a href="#">Результаты</a>
+              <a href="#" class="selected-menu-item">Результаты</a>
             </li>
             <li class="site-nav-item">
               <a href="check.html">Проверить купон</a>
@@ -104,7 +104,7 @@
               </div>
               <!--<a class="user user-img" href="profile.html"><img id="user-img" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
               <a class="user user-name" id="user-name" href="profile.html">Степан Иванов</a>
-              <a class="user user-money" id="user-money" href="balance.html">421 304 <i class="fas fa-ruble-sign"></i></a>
+              <a class="user user-money ruble" id="user-money" href="balance.html">421 304</a>
               <div class="user-dropdown">
                 <a class="user user-options-btn" id="user-options" href="#"><i class="fas fa-angle-down"></i></a>
                 <div class="dropdown">
@@ -251,102 +251,77 @@
           <form method="post" action="someaction.php" id="results-form">
           <ul class="user-profile-menu">
             <li>
-              <select>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-              </select>
+              <div class="select">
+                <select>
+                  <option value="football">Футбол</option>
+                  <option value="hockey">Хоккей</option>
+                  <option value="basketball">Баскетбол</option>
+                  <option value="tennis">Теннис</option>
+                  <option value="gandball">Гандбол</option>
+                  <option value="ctbersport">Киберспорт</option>
+                  <option value="volleyball">Воллейбол</option>
+                  <option value="regby">Регби</option>
+                </select>
+              </div>
             </li>
             <li>
-              <input type="date">
+              <div class="select">
+                <select>
+                  <option value="sort-league">По лигам</option>
+                  <option value="sort-date">По дате</option>
+                </select>
+              </div>
             </li>
             <li>
-              <select>
-                <option value=""></option>
-                <option value=""></option>
-              </select>
+              <input placeholder="Дата события" type="text" onfocus="this.type='date';
+                this.setAttribute('onfocus','');this.blur();this.focus();" id="date">
             </li>
             <li>
-              <button class="btn btn-red">Применить фильтр</button>
+              <button class="btn btn-red">Показать</button>
             </li>
           </ul>
           <div class="page-body">
-            <h3>История ставок</h3>
-              <div class="bet-history-item item-wait">
-                <i class="fas fa-circle-notch fa-spin"></i>
-                <span class="history-sum">
-                  2 354 <i class="fas fa-ruble-sign"></i>
-                </span>
-
-                <span class="history-event">Реал Мадрид - Барселона</span>
-                <span class="history-event-type">П1</span>
-                <span class="history-event-time">19:00</span>
-                <span class="history-date">23.05.2018</span>
+              <div class="bet-history-item item-common">
+                <div class="history-event-league icon football-icon">Лига Чемпионов</div>
+                <div class="history-event">Реал Мадрид - Барселона</div>
+                <div class="history-date">23.05.2018, 19:00</div>
+                <div class="history-event-result">2:0<span class="sub-result">(1:0, 1:0)</span></div>
               </div>
-              <div class="bet-history-item item-win">
-                <i class="fas fa-plus"></i>
-                <span class="history-sum">
-                  2 354 <i class="fas fa-ruble-sign"></i>
-                </span>
-                <span class="history-event">Реал Мадрид - Барселона</span>
-                <span class="history-event-type">П1</span>
-                <span class="history-event-time">19:00</span>
-                <span class="history-date">23.05.2018</span>
+              <div class="bet-history-item item-common">
+                <div class="history-event-league icon football-icon">Лига Чемпионов</div>
+                <div class="history-event">Реал Мадрид - Барселона</div>
+                <div class="history-date">23.05.2018, 19:00</div>
+                <div class="history-event-result">2:0<span class="sub-result">(1:0, 1:0)</span></div>
               </div>
-              <div class="bet-history-item item-lose">
-                <i class="fas fa-minus"></i>
-                <span class="history-sum">
-                  5 313 <i class="fas fa-ruble-sign"></i>
-                </span>
-                <span class="history-event">Реал Мадрид - Барселона</span>
-                <span class="history-event-type">П1</span>
-                <span class="history-event-time">19:00</span>
-                <span class="history-date">23.05.2018</span>
+              <div class="bet-history-item item-common">
+                <div class="history-event-league icon football-icon">Лига Чемпионов</div>
+                <div class="history-event">Реал Мадрид - Барселона</div>
+                <div class="history-date">23.05.2018, 19:00</div>
+                <div class="history-event-result">2:0<span class="sub-result">(1:0, 1:0)</span></div>
               </div>
-              <div class="bet-history-item item-win">
-                <i class="fas fa-plus"></i>
-                <span class="history-sum">
-                  10 433 <i class="fas fa-ruble-sign"></i>
-                </span>
-                <span class="history-event">Реал Мадрид - Барселона</span>
-                <span class="history-event-type">П1</span>
-                <span class="history-event-time">19:00</span>
-                <span class="history-date">23.05.2018</span>
+              <div class="bet-history-item item-common">
+                <div class="history-event-league icon football-icon">Лига Чемпионов</div>
+                <div class="history-event">Реал Мадрид - Барселона</div>
+                <div class="history-date">23.05.2018, 19:00</div>
+                <div class="history-event-result">2:0<span class="sub-result">(1:0, 1:0)</span></div>
               </div>
-              <div class="bet-history-item item-lose">
-                <i class="fas fa-minus"></i>
-                <span class="history-sum">
-                  5 313 <i class="fas fa-ruble-sign"></i>
-                </span>
-                <span class="history-event">Реал Мадрид - Барселона</span>
-                <span class="history-event-type">П1</span>
-                <span class="history-event-time">19:00</span>
-                <span class="history-date">23.05.2018</span>
+              <div class="bet-history-item item-common">
+                <div class="history-event-league icon football-icon">Лига Чемпионов</div>
+                <div class="history-event">Реал Мадрид - Барселона</div>
+                <div class="history-date">23.05.2018, 19:00</div>
+                <div class="history-event-result">2:0<span class="sub-result">(1:0, 1:0)</span></div>
               </div>
-              <div class="bet-history-item item-win">
-                <i class="fas fa-plus"></i>
-                <span class="history-sum">
-                  10 433 <i class="fas fa-ruble-sign"></i>
-                </span>
-                <span class="history-event">Реал Мадрид - Барселона</span>
-                <span class="history-event-type">П1</span>
-                <span class="history-event-time">19:00</span>
-                <span class="history-date">23.05.2018</span>
+              <div class="bet-history-item item-common">
+                <div class="history-event-league icon football-icon">Лига Чемпионов</div>
+                <div class="history-event">Реал Мадрид - Барселона</div>
+                <div class="history-date">23.05.2018, 19:00</div>
+                <div class="history-event-result">2:0<span class="sub-result">(1:0, 1:0)</span></div>
               </div>
-              <div class="bet-history-item item-win">
-                <i class="fas fa-plus"></i>
-                <span class="history-sum">
-                  10 433 <i class="fas fa-ruble-sign"></i>
-                </span>
-                <span class="history-event">Реал Мадрид - Барселона</span>
-                <span class="history-event-type">П1</span>
-                <span class="history-event-time">19:00</span>
-                <span class="history-date">23.05.2018</span>
+              <div class="bet-history-item item-common">
+                <div class="history-event-league icon football-icon">Лига Чемпионов</div>
+                <div class="history-event">Реал Мадрид - Барселона</div>
+                <div class="history-date">23.05.2018, 19:00</div>
+                <div class="history-event-result">2:0<span class="sub-result">(1:0, 1:0)</span></div>
               </div>
           </div>
         </div>
@@ -357,7 +332,7 @@
               <a class="btn" href="#reg" rel="modal:open">Регистрация</a>
               <!--<a href="profile.html"><img id="user-img-mobile" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
               <a id="user-name-mobile" href="profile.html">Степан Иванов</a>
-              <a id="user-money-mobile" href="balance.html">421 304 <i class="fas fa-ruble-sign"></i></a>
+              <a  id="user-money-mobile" class="ruble" href="balance.html">421 304</a>
               <div class="user-mobile-options">
                 <a href="profile.html">Мой профиль</a>
                 <a href="balance.html">Управление балансом</a>

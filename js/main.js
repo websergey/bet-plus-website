@@ -165,11 +165,13 @@ jQuery(document).ready(function ($) {
 		var len = $('.coupon-event-container ul li').length;
 		var login = $('.coupon-login');
 		if (len == 0 && login.length == 0) {
+      // Если полозователь не авторизован
+      /*$('.coupon-event-container').prepend('<div class="coupon-login"><a href="#reg" rel="modal:open">Зарегистрируйтесь</a> или <a href="#login" rel="modal:open">авторизуйтесь</a>, чтобы выбрать событие</div>');*/
 			$('.coupon-event-container').prepend('<div class="coupon-login">Выберите событие из списка ставок</div>');
 			$('#coupon-toggle-1').removeClass('toggle-selected').addClass('disabled');
 			$('#coupon-toggle-2').addClass('disabled')
 			$('.right-menu-form button').addClass('disabled').removeClass('btn-white-red').css('color', '#bfc7d5');
-			/*$('.coupon-event-container').prepend('<div class="coupon-login"><a href="#">Зарегистрируйтесь</a> или <a href="#">авторизуйтесь</a>, чтобы выбрать событие</div>');*/
+      $('#koef-num').html(parseFloat(0).toFixed(2));
 			return false;
 		} else {
 			if (len == 1) {
@@ -217,11 +219,26 @@ jQuery(document).ready(function ($) {
 		koefs = $.merge(other, koefs);
 
 		if (koefs.length == 0) {
-
 			target.data('coupon', newcoupon.attr('id'));
 			target.toggleClass('event-koef-red');
 			couponsBlock.append(newcoupon);
-			koefsum.html((parseFloat(koefsum.html()) + parseFloat(target.html())).toFixed(2));
+      var couponDeleteBtn = couponsBlock.find('#' + newcoupon.attr('id')).children().eq(0);
+      couponDeleteBtn.on('click', function(event) {
+        var target = $(event.target);
+        var coupon_del = target.parents('li');
+        couponsBlock.find('#' + coupon_del.attr('id')).remove();
+        $('.event-koef-red').each(function () {
+          if ($(this).data('coupon') == coupon_del.attr('id')) {
+            $(this).removeData('coupon');
+            $(this).toggleClass('event-koef-red');
+          }
+        });
+        koefsum.html((parseFloat(koefsum.html()) / parseFloat(coupon_del.find('.coupon-event-koef').html())).toFixed(2));
+        winsum.html(($('#bet-sum').val() * koefsum.html()).toFixed(2));
+        checkCoupons();
+      });
+      if (parseFloat(koefsum.html()) == 0) {koefsum.html('1')};
+			koefsum.html((parseFloat(koefsum.html()) * parseFloat(target.html())).toFixed(2));
 			winsum.html(($('#bet-sum').val() * koefsum.html()).toFixed(2));
 			coupon_count += 1;
 			checkCoupons();
@@ -231,7 +248,7 @@ jQuery(document).ready(function ($) {
 			if (target.hasClass('event-koef-red')) {
 				target.toggleClass('event-koef-red');
 				couponsBlock.find('#' + target.data('coupon')).remove();
-				koefsum.html((parseFloat(koefsum.html()) - parseFloat(target.html())).toFixed(2));
+				koefsum.html((parseFloat(koefsum.html()) / parseFloat(target.html())).toFixed(2));
 				winsum.html(($('#bet-sum').val() * koefsum.html()).toFixed(2));
 				checkCoupons();
 				return;
@@ -249,7 +266,7 @@ jQuery(document).ready(function ($) {
 			coupons.each(function () {
 				if ($(this).data('coupon') != target.data('coupon')) {
 					var coupon_del = couponsBlock.find('#' + $(this).data('coupon'));
-					koefsum.html((parseFloat(koefsum.html()) - parseFloat(coupon_del.find('.coupon-event-koef').html())).toFixed(2));
+					koefsum.html((parseFloat(koefsum.html()) / parseFloat(coupon_del.find('.coupon-event-koef').html())).toFixed(2));
 					winsum.html(($('#bet-sum').val() * koefsum.html()).toFixed(2));
 					coupon_del.remove();
 					$(this).removeData('coupon');
@@ -257,7 +274,23 @@ jQuery(document).ready(function ($) {
 			});
 
 			couponsBlock.append(newcoupon);
-			koefsum.html((parseFloat(koefsum.html()) + parseFloat(target.html())).toFixed(2));
+      var couponDeleteBtn = couponsBlock.find('#' + newcoupon.attr('id')).children().eq(0);
+      couponDeleteBtn.on('click', function(event) {
+        var target = $(event.target);
+        var coupon_del = target.parents('li');
+        couponsBlock.find('#' + coupon_del.attr('id')).remove();
+        $('.event-koef-red').each(function () {
+          if ($(this).data('coupon') == coupon_del.attr('id')) {
+            $(this).removeData('coupon');
+            $(this).toggleClass('event-koef-red');
+          }
+        });
+        koefsum.html((parseFloat(koefsum.html()) / parseFloat(coupon_del.find('.coupon-event-koef').html())).toFixed(2));
+        winsum.html(($('#bet-sum').val() * koefsum.html()).toFixed(2));
+        checkCoupons();
+      });
+
+			koefsum.html((parseFloat(koefsum.html()) * parseFloat(target.html())).toFixed(2));
 			winsum.html(($('#bet-sum').val() * koefsum.html()).toFixed(2));
 			target.data('coupon', newcoupon.attr('id'));
 			coupon_count += 1;
@@ -266,8 +299,8 @@ jQuery(document).ready(function ($) {
 			target.toggleClass('event-koef-red');
 
 			checkCoupons();
+		 }
 
-		}
     checkBetsCount();
  	});
 
@@ -293,18 +326,31 @@ jQuery(document).ready(function ($) {
 
 	// Добавление последних дат в фильтр
 
-	function formatDate(date) {
-		var dd = date.getDate();
-		if (dd < 10) dd = '0' + dd;
+  $('.history-event-status.status-win').each(function () {
+    $(this).closest('.history-subitem-coupon').css('border', '2px solid #bdd9bc');
+  });
+  $('.history-event-status.status-loose').each(function () {
+    $(this).closest('.history-subitem-coupon').css('border', '2px solid #ebb6b6');
+  });
+  $('.history-event-status.status-back').each(function () {
+    $(this).closest('.history-subitem-coupon').css('border', '2px solid #e2d27a');
+  });
+  $('.history-event-status.status-wait').each(function () {
+    $(this).closest('.history-subitem-coupon').css('border', '2px solid #d6dff2');
+  });
 
-		var mm = date.getMonth() + 1;
-		if (mm < 10) mm = '0' + mm;
+  function formatDate(date) {
+    var dd = date.getDate();
+    if (dd < 10) dd = '0' + dd;
 
-		var yy = date.getFullYear() % 100;
-		if (yy < 10) yy = '0' + yy;
+    var mm = date.getMonth() + 1;
+    if (mm < 10) mm = '0' + mm;
 
-		return dd + '.' + mm + '.' + yy;
-	}
+    var yy = date.getFullYear() % 100;
+    if (yy < 10) yy = '0' + yy;
+
+    return dd + '.' + mm + '.' + yy;
+  }
 
 	var now = new Date();
 	for (var i = 0; i < 7; i++) {
@@ -314,6 +360,7 @@ jQuery(document).ready(function ($) {
 	}
 
 	$(window).bind('resize', checkPosition);
+
 
   function checkBetsCount() {
     if ($('.coupon-event').length == 0) {
@@ -342,7 +389,7 @@ jQuery(document).ready(function ($) {
             childs.wrapAll('<div class="mobile-koefs"></div>');
           });
         }
-      if ($('#left-toggle').length == 0) $('.site-nav').prepend('<li class="site-nav-item" id="left-toggle"><i class="fas fa-bars"></i></li>');
+      if ($('#left-toggle').length == 0) $('.site-nav').prepend('<li class="site-nav-item" id="left-toggle"><i class="fas fa-list-ul"></i></li>');
       if ($('#right-toggle').length == 0) $('.site-nav').append('<li class="site-nav-item" id="right-toggle"><i class="fas fa-user"></i></li>');
       if ($('#left-close').length == 0) $('.left-menu').prepend('<a class="closebtn" id="left-close"><i class="fas fa-angle-left"></i></a>');
       if ($('#coupon-close').length == 0) $('.right-menu').prepend('<a class="closebtn" id="coupon-close"><i class="fas fa-angle-left"></i></a>');
@@ -350,22 +397,22 @@ jQuery(document).ready(function ($) {
       $('#coupon-toggle').show();
       checkBetsCount();
       $('#left-toggle').click(function () {
-        $('.left-menu').toggleClass('menu-open')
+        $('.left-menu').addClass('menu-open')
       });
       $('#right-toggle').click(function () {
-        $('.user-menu-mobile').toggleClass('menu-open')
+        $('.user-menu-mobile').addClass('menu-open')
       });
       $('#coupon-toggle').click(function () {
-        $('.right-menu').toggleClass('menu-open')
+        $('.right-menu').addClass('menu-open')
       });
       $('#left-close').click(function () {
-        $('.left-menu').toggleClass('menu-open')
+        $('.left-menu').removeClass('menu-open')
       });
       $('#right-close').click(function () {
-        $('.user-menu-mobile').toggleClass('menu-open')
+        $('.user-menu-mobile').removeClass('menu-open')
       });
       $('#coupon-close').click(function () {
-        $('.right-menu').toggleClass('menu-open')
+        $('.right-menu').removeClass('menu-open')
       });
     } else {
       $('.koef-type').each(function () {

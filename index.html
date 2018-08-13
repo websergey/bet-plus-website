@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/accordion.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="js/accordion.js"></script>
   </head>
   <body>
     <div id="preloader">
@@ -249,11 +251,7 @@
         </section>
         <div class="page-content">
           <section id="slider">
-            <ul>
-              <li>
-                <a href="#"></a>
-              </li>
-            </ul>
+              <li></li>
           </section>
           <section class="filters">
             <ul>
@@ -291,8 +289,8 @@
           <section class="event-grid">
             <div class="event-item">
               <div class="event-head event-selected-item">
-                <div class="event-name">
-                  <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
+                <div class="event-name icon football-icon">
+                  Лига чемпионов УЕФА
                   <span class="event-count">1543</span>
                   <a class="show-event"><i class="fas fa-angle-down"></i></a>
                 </div>
@@ -698,8 +696,8 @@
             </div>
             <div class="event-item">
               <div class="event-head">
-                <div class="event-name">
-                  <i class="far fa-futbol mr-1"></i>Лига чемпионов УЕФА
+                <div class="event-name icon football-icon">
+                  Лига чемпионов УЕФА
                   <span class="event-count">1543</span>
                   <a class="show-event"><i class="fas fa-angle-down"></i></a>
                 </div>
@@ -1112,7 +1110,7 @@
               <a class="btn" href="#reg" rel="modal:open">Регистрация</a>
               <!--<a href="profile.html"><img id="user-img-mobile" src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg"></a>
               <a id="user-name-mobile" href="profile.html">Степан Иванов</a>
-              <a id="user-money-mobile" href="balance.html">421 304 <i class="fas fa-ruble-sign"></i></a>
+              <a  id="user-money-mobile" class="ruble" href="balance.html">421 304</i></a>
               <div class="user-mobile-options">
                 <a href="profile.html">Мой профиль</a>
                 <a href="balance.html">Управление балансом</a>
@@ -1152,7 +1150,77 @@
             </ul>
           </div>
           <div class="coupon-history">
-            Вы еще не сделали ни одной ставки
+            <div class="bet-history-item item-wait">
+              <div class="history-sum ruble">2 354</div>
+              <div class="history-bet-sum ruble">500</div>
+              <div class="history-subitem-wrapper">
+                <div class="history-subitem">
+                  <div class="history-event">Реал Мадрид - Барселона</div>
+                  <div class="history-event-info">
+                    <span class="history-date">23.05.2018, 19:00</span>
+                    <div class="history-bet-info">
+                      <span class="history-event-type">П1</span>
+                      <span class="history-koef">x 2.13</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="history-subitem">
+                  <div class="history-event">Реал Мадрид - Барселона</div>
+                  <div class="history-event-info">
+                    <span class="history-date">23.05.2018, 19:00</span>
+                    <div class="history-bet-info">
+                      <span class="history-event-type">П1</span>
+                      <span class="history-koef">x 2.13</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-coupon-num">#123434</div>
+            </div>
+            <div class="bet-history-item item-win">
+              <div class="history-sum ruble">2 354</div>
+              <div class="history-bet-sum ruble">500</div>
+              <div class="history-subitem-wrapper">
+                <div class="history-subitem">
+                  <div class="history-event">Реал Мадрид - Барселона</div>
+                  <div class="history-event-info">
+                    <span class="history-date">23.05.2018, 19:00</span>
+                    <div class="history-bet-info">
+                      <span class="history-event-type">П1</span>
+                      <span class="history-koef">x 2.13</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-coupon-num">#123434</div>
+            </div>
+            <div class="bet-history-item item-loose">
+              <div class="history-sum ruble">21 513</div>
+              <div class="history-bet-sum ruble">1 500</div>
+              <div class="history-subitem-wrapper">
+                <div class="history-subitem">
+                  <div class="history-event">Реал Мадрид - Барселона</div>
+                  <div class="history-event-info">
+                    <span class="history-date">23.05.2018, 19:00</span>
+                    <div class="history-bet-info">
+                      <span class="history-event-type">П1</span>
+                      <span class="history-koef">x 2.13</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="history-subitem">
+                  <div class="history-event">Реал Мадрид - Барселона</div>
+                  <div class="history-event-info">
+                    <span class="history-date">23.05.2018, 19:00</span>
+                    <div class="history-bet-info">
+                      <span class="history-event-type">П1</span>
+                      <span class="history-koef">x 2.13</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-coupon-num">#123434</div>
+            </div>
           </div>
           <div class="coupon-toggle-block">
             <ul>
@@ -1237,5 +1305,8 @@
       </footer>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+      $('.accordion').accordion();
+    </script>
   </body>
 </html>

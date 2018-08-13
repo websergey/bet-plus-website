@@ -80,6 +80,8 @@ h3 {
   float: left;
 }
 
+/*----SCROLL-BARS----*/
+
 .left-menu-cats::-webkit-scrollbar {
   width: 17px;
   background: #0d1b2a;
@@ -164,13 +166,40 @@ h3 {
 	background: #4c566a;
 }
 
-.ruble:after {
-  content:"\20BD";
-}
+/*----ICONS----*/
 .arrow {
   content: '\f107';
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
+}
+.ruble::after {
+  content:"\20BD";
+  margin-left: 3px;
+}
+.dollar::after {
+  content:"\0024";
+  margin-left: 3px;
+}
+.euro::after {
+  content:"\20AC";
+  margin-left: 3px;
+}
+.icon::after, .icon::before {
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+}
+.icon::after {
+  margin-left: 5px;
+}
+.icon::before {
+  margin-right: 5px;
+}
+.football-icon::before {
+  content: '\f1e3';
+  font-weight: 100;
+}
+.tennis-icon::before {
+  content: '\f1e3';
 }
 #preloader {
   position: fixed;
@@ -188,6 +217,9 @@ h3 {
   top: 50%;
   margin: -35px 0 0 -35px;
 }
+
+/*----BUTTONS----*/
+
 .btn {
   outline: none;
   border: none;
@@ -223,18 +255,14 @@ h3 {
   color: #f82516;
   box-shadow: none;
 }
-.btn-dark-blue {
-
-}
-.btn-dark-blue:hover{
-
-}
 .btn-big {
   display: block;
   width: 100%;
   font-size: 16px;
   padding: 10px 20px;
 }
+
+/*----OFSET STYLES----*/
 
 .mt-1 {
   margin-top: 10px;
@@ -548,6 +576,37 @@ input, button {
   border: none;
   border-radius: 0;
   background: none;
+}
+#date {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  min-height: 1.2em;
+  background: #e4e9f1;
+  color: #7b869c;
+  cursor: pointer;
+  width: calc(100% - 20px);
+  height: 100%;
+  padding: 0 10px;
+  font-size: 14px;
+  font-family: 'Open Sans';
+  border-radius: 5px;
+}
+#date::-webkit-inner-spin-button,
+#date::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#date::-webkit-datetime-edit-fields-wrapper { border-radius: 5px; }
+#date::-webkit-calendar-picker-indicator {
+  margin-right: 10px;
+}
+#date::-webkit-datetime-edit {
+  padding: 9px 20px;
+}
+.user-profile-menu .select {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*----PAGE-CONTAINER---*/
@@ -912,6 +971,10 @@ a.currency-btn > i.fa-angle-down {
   margin: 20px auto;
   color: #4c566a;
 }
+.coupon-login a {
+  font-weight: 600;
+  border-bottom: 1px solid #4c566a;
+}
 .coupon-event .coupon-event-name {
   font-weight: 600;
   font-size: 12px;
@@ -965,9 +1028,18 @@ a.currency-btn > i.fa-angle-down {
   display: none;
   font-size: 14px;
   text-align: center;
-  max-width: 200px;
-  margin: 20px auto;
   color: #4c566a;
+}
+.coupon-history .bet-history-item {
+  width: calc(100% - 40px);
+  text-align: left;
+}
+.coupon-history .bet-history-item div.history-coupon-num {
+  padding: 3px 5px;
+  font-size: 10px;
+}
+.coupon-history .history-subitem {
+  margin-right: 0;
 }
 .coupon-toggle-block, .coupon-tabs {
   width: 100%;
@@ -1684,7 +1756,6 @@ footer.page-footer div.footer-info a {
   color: #fff;
   background: #1b263b;
   box-shadow: 0 3px 25px #1b263b;
-  border-radius: 5px 5px 0 0;
 }
 .page-content .user-profile-menu li {
   display: inline-block;
@@ -1702,13 +1773,19 @@ footer.page-footer div.footer-info a {
 .page-content .user-profile-menu li a.btn {
   padding: 5px 10px;
 }
+.user-profile-menu button {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: none;
+}
 .page-body {
   background: #fff;
   padding: 30px;
   border-radius: 0 0 5px 5px;
-}
-.page-content .profile-info p {
-  font-size: 12px;
 }
 .page-content .profile-info {
   padding: 15px;
@@ -1716,8 +1793,16 @@ footer.page-footer div.footer-info a {
   background: #d6dff2;
   color: #243f52;
 }
+.page-content .profile-info p {
+  font-size: 12px;
+}
 .page-content .profile-info:not(:last-child) {
   margin-bottom: 15px;
+}
+.profile-info .history-item .history-date {
+  position: absolute;
+  top: 10px;
+  right: 0;
 }
 .page-content .profile-green-info {
   background: #bdd9bc;
@@ -1818,6 +1903,20 @@ footer.page-footer div.footer-info a {
 .balance-select {
   display: block;
 }
+#results-form ul {
+  display: flex;
+  flex-direction: row;
+}
+#results-form li {
+  flex-grow: 1;
+  padding: 0 10px;
+}
+#results-form li:first-child {
+  padding-left: 0;
+}
+#results-form li:last-child {
+  padding-right: 0;
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1834,7 +1933,6 @@ select {
   position: relative;
   display: inline-block;
   width: 200px;
-  line-height: 3;
   background: #e4e9f1;
   overflow: hidden;
   border-radius: 5px;
@@ -1860,6 +1958,7 @@ select::-ms-expand {
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
   position: absolute;
+  line-height: 3.3;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1877,6 +1976,7 @@ select::-ms-expand {
   transition: .25s all ease;
 }
 .history-item {
+  position: relative;
   font-size: 12px;
   padding: 10px 0;
 }
@@ -1891,37 +1991,204 @@ select::-ms-expand {
   float: right;
 }
 .history-sum {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.history-bet-sum {
+  font-size: 14px;
+}
+.history-event-info span {
+  display: inline-block;
+}
+.history-bet-info {
+  display: inline-block;
+  padding: 3px 5px;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.15);
+  font-weight: 600;
+  margin-left: 5px;
+}
+.history-bet-status {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.history-bet-status::after {
+  padding: 3px 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 12px;
+}
+.bet-loose::after {
+  content: 'Проигрыш';
+}
+.bet-win::after {
+  content: 'Выигрыш';
+}
+.bet-back::after {
+  content: 'Возврат';
+}
+.bet-wait::after {
+  content: 'В ожидании...';
 }
 .bet-history-item {
+  position: relative;
   font-size: 12px;
   padding: 15px 20px;
   border-radius: 5px;
 }
+.history-event-info {
+  padding-top: 5px;
+}
 .bet-history-item:not(:last-child) {
   margin-bottom: 10px;
 }
-.bet-history-item span:not(:last-child) {
+.history-event {
+  display: block;
+  font-weight: 600;
+}
+.history-subitem-wrapper {
+  margin-top: 10px;
+  display: block;
+  text-align: left;
+}
+.history-subitem {
   display: inline-block;
-  margin-right: 20px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  background: rgba(255,255,255,0.4);
+  padding: 10px;
+  border-radius: 5px;
 }
-.bet-history-item span:last-child {
-  float: right;
+.history-subitem-coupon {
+  position: relative;
+  margin-bottom: 5px;
+  background: rgba(255,255,255,0.4);
+  padding: 10px;
+  border-radius: 5px;
 }
-.item-win {
+.history-event-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 60px;
+  font-size: 20px;
+}
+.history-bet-date {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.history-bet-date::before {
+  content: '\f133';
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  margin-right: 10px;
+}
+.status-win::before, .status-loose::before, .status-back::before, .status-wait::before {
+  display: block;
+  text-align: center;
+  padding-top: 50%;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+}
+.status-win::before {
+  content: '\f091';
+}
+.status-wait::before {
+  content: '\f017';
+}
+.status-loose::before {
+  content: '\f05e';
+}
+.status-back::before {
+  content: '\f2ea';
+}
+.history-bet-sum::before {
+  content: 'Ставка: ';
+}
+.bet-history-item .history-event-league {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.bet-history-item div.history-event-result {
+  position: absolute;
+  font-weight: 700;
+  top: 15px;
+  right: 20px;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
+  background: #bfc7d5;
+  color: #4c566a;
+  border-radius: 5px;
+}
+.sub-result {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+}
+.bet-history-item div.history-coupon-num {
+  position: absolute;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 5px 10px;
+  top: 15px;
+  right: 20px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 5px;
+}
+.item-win, .status-win, .bet-win::after {
   background: #bdd9bc;
   color: #2f522d;
 }
-.item-lose {
-  background: #d79898;
+.item-win .history-sum::before {
+  content: '\f00c';
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  margin-right: 5px;
+}
+.item-loose, .status-loose, .bet-loose::after {
+  background: #ebb6b6;
   color: #701818;
 }
-.item-wait {
+.item-back, .status-back, .bet-back::after {
+  background: #e2d27a;
+  color: #5d471b;
+}
+.item-loose .history-sum::before {
+  content: '\f00d';
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  margin-right: 5px;
+}
+.item-wait, .status-wait, .bet-wait::after {
   background: #d6dff2;
   color: #243f52;
 }
+.item-wait .history-sum::before {
+  content: '\f017';
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  margin-right: 5px;
+}
+.item-common {
+  background: #e4e9f1;
+  color: #0d1b2a;
+}
+.item-common .history-sum::before {
+  content: 'Возможный выигрыш: '
+}
 .bet-history-item i {
+  position: absolute;
+  top: 0;
   margin-right: 10px;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {
@@ -1932,7 +2199,7 @@ select::-ms-expand {
     min-width: 620px;
     max-width: 768px;
   }
-  li.site-nav-item, .site-nav .user-nav {
+  li.site-nav-item, .site-nav .user-nav, footer.page-footer {
     display: none;
   }
   li.site-nav-item:first-child, li.site-nav-item:nth-child(2), li.site-nav-item:last-child {
@@ -1999,6 +2266,10 @@ select::-ms-expand {
   }
   li.site-nav-item > a {
     padding: 0;
+  }
+  li.site-nav-item > a:hover {
+    border: 0;
+    box-shadow: none;
   }
   li.site-nav-item:first-child {
     position: static;
@@ -2141,19 +2412,11 @@ select::-ms-expand {
     height: 25%;
     border-radius: 0;
   }
-  footer.page-footer {
-    position: fixed;
-    bottom: 0;
-    height: 20px;
-    padding: 15px 20px;
-    width: calc(100% - 40px)
-  }
   .page-wrapper {
     position: relative;
     margin-top: 50px;
-  }
-  .page-container {
-    margin-bottom: 50px;
+    height: calc(100% - 50px);
+    border-radius: 0;
   }
   .page-content {
     margin: 0;
@@ -2162,7 +2425,9 @@ select::-ms-expand {
     min-width: 320px;
     transition: 0.5s;
     border-radius: 0;
-    margin-bottom: 50px;
+  }
+  .page-body {
+    border-radius: 0;
   }
   .user-mobile-menu::-webkit-scrollbar { width: 0; }
   .user-mobile-menu { -ms-overflow-style: none; }
@@ -2243,19 +2508,41 @@ select::-ms-expand {
     display: block;
     width: 100%;
   }
+  .history-subitem {
+    margin-right: 0;
+    width: calc(100% - 20px);
+  }
   .history-item {
     position: relative;
+  }
+  .history-bet-date {
+    font-size: 12px;
   }
   .history-item span:not(:last-child){
     display: block;
   }
-  .history-item span:last-child,  .bet-history-item span:last-child {
-    position: absolute;
-    top: 15px;
-    right: 20px;
+  .history-bet-info {
+    display: block;
+    margin: 0;
+    margin-top: 5px;
+    width: fit-content;
+  }
+  .history-event-status {
+    height: auto;
+    bottom: 0;
+    top: auto;
+    width: 30px;
+    border-radius: 5px 0 0 0;
+  }
+  .history-event-status::before {
+    padding: 5px;
+    font-size: 12px;
   }
   .bet-history-item {
     position: relative;
+  }
+  .bet-history-item div.history-coupon-num {
+    font-size: 12px;
   }
   .bet-history-item > span:nth-child(3) {
     display: block;
@@ -2266,5 +2553,27 @@ select::-ms-expand {
   }
   .bet-history-item span.history-sum, .history-event-type, .history-event-time {
     display: inline-block;
+  }
+  .bet-history-item div.history-event-result {
+    display: inline-block;
+    position: static;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .sub-result {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: inherit;
+  }
+  #results-form ul {
+    flex-direction: row;
+  }
+  #results-form ul li {
+    padding: 0 5px;
+    min-width: 130px;
+  }
+  .user-profile-menu button {
+    width: auto;
   }
 }
