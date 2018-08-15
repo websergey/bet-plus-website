@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BET+ ставки на любые события в мире</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/accordion.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <script src="js/accordion.js"></script>
   </head>
   <body>
     <div id="preloader">
@@ -250,10 +249,46 @@
           </ul>
         </section>
         <div class="page-content">
-          <section id="slider">
-              <li></li>
+          <section id="slider" class="slider">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://source.unsplash.com/user/erondu/"></div>
+                <div class="swiper-slide"><img src="https://source.unsplash.com/user/d_che/"></div>
+                <div class="swiper-slide"><img src="https://source.unsplash.com/collection/190727/"></div>
+                <div class="swiper-slide"><img src="https://source.unsplash.com/random"></div>
+              </div>
+              <div class="swiper-pagination swiper-pagination-white"></div>
+              <div class="swiper-button-next swiper-button-white"></div>
+              <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
           </section>
           <section class="filters">
+            <div class="filter-tags-wrapper hidden-left">
+                <div class="filter-tags-block" onmousedown="return false">
+                  <div><a href="#" class="filter-tag icon line-icon">Линия</a></div>
+                  <div><a href="#" class="filter-tag"><i class="fas fa-circle"></i>LIVE</a></div>
+                  <div><a href="#" class="filter-tag icon football-icon">Футбол</a></div>
+                  <div><a href="#" class="filter-tag icon tennis-icon">Теннис</a></div>
+                  <div><a href="#" class="filter-tag icon volleyball-icon">Воллейбол</a></div>
+                  <div><a href="#" class="filter-tag icon hockey-icon">Хоккей</a></div>
+                  <div><a href="#" class="filter-tag icon cybersport-icon">Киберспорт</a></div>
+                  <div><a href="#" class="filter-tag icon basketball-icon">Баскетбол</a></div>
+                  <div><a href="#" class="filter-tag icon table-tennis-icon">Настольный теннис</a></div>
+                  <div><a href="#" class="filter-tag icon rugby-icon">Регби</a></div>
+                  <div><a href="#" class="filter-tag icon baseball-icon">Бейсбол</a></div>
+                  <div><a href="#" class="filter-tag icon snuker-icon">Снукер</a></div>
+                  <div><a href="#" class="filter-tag icon boks-icon">Бокс</a></div>
+                  <div><a href="#" class="filter-tag icon fight-icon">Единоборства</a></div>
+                  <div><a href="#" class="filter-tag icon biathlon-icon">Биатлон</a></div>
+                  <div><a href="#" class="filter-tag icon bicycle-icon">Велоспорт</a></div>
+                  <div><a href="#" class="filter-tag icon formula1-icon">Формула 1</a></div>
+                  <div><a href="#" class="filter-tag icon darts-icon">Дартс</a></div>
+                  <div><a href="#" class="filter-tag icon horse-icon">Скачки</a></div>
+                  <div><a href="#" class="filter-tag icon gandball-icon">Гандбол</a></div>
+                  <div><a href="#" class="filter-tag icon kriket-icon">Крикет</a></div>
+                  <div><a href="#" class="filter-tag icon golf-icon">Гольф</a></div>
+                </div>
+            </div>
             <ul>
               <li><a href="#" class="filter-item filter-selected-item">Все</a></li>
               <li>
@@ -1119,10 +1154,10 @@
               </div>-->
             </div>
             <div class="user-main-menu">
-              <a href="index.html" class="selected-menu-item">Линия</a>
-              <a href="#">LIVE</a>
-              <a href="results.html">Результаты</a>
-              <a href="check.html">Проверить купон</a>
+              <a href="index.html" class="icon line-icon">Линия</a>
+              <a href="#" class="icon live-icon">LIVE</a>
+              <a href="results.html" class="icon result-icon">Результаты</a>
+              <a href="check.html" class="icon coupon-check-icon">Проверить купон</a>
             </div>
             <div class="user-mobile-time">
               <i class="fas fa-clock"></i>
@@ -1145,82 +1180,8 @@
         <section class="right-menu">
           <div class="coupon-tabs mb-1">
             <ul>
-              <li><a id="tab-toggle-1" class="toggle-selected" href="#">Купон</a></li>
-              <li><a id="tab-toggle-2" href="#">История ставок</a></li>
+              <li><a id="tab-toggle-1" href="#">Купон</a></li>
             </ul>
-          </div>
-          <div class="coupon-history">
-            <div class="bet-history-item item-wait">
-              <div class="history-sum ruble">2 354</div>
-              <div class="history-bet-sum ruble">500</div>
-              <div class="history-subitem-wrapper">
-                <div class="history-subitem">
-                  <div class="history-event">Реал Мадрид - Барселона</div>
-                  <div class="history-event-info">
-                    <span class="history-date">23.05.2018, 19:00</span>
-                    <div class="history-bet-info">
-                      <span class="history-event-type">П1</span>
-                      <span class="history-koef">x 2.13</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="history-subitem">
-                  <div class="history-event">Реал Мадрид - Барселона</div>
-                  <div class="history-event-info">
-                    <span class="history-date">23.05.2018, 19:00</span>
-                    <div class="history-bet-info">
-                      <span class="history-event-type">П1</span>
-                      <span class="history-koef">x 2.13</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="history-coupon-num">#123434</div>
-            </div>
-            <div class="bet-history-item item-win">
-              <div class="history-sum ruble">2 354</div>
-              <div class="history-bet-sum ruble">500</div>
-              <div class="history-subitem-wrapper">
-                <div class="history-subitem">
-                  <div class="history-event">Реал Мадрид - Барселона</div>
-                  <div class="history-event-info">
-                    <span class="history-date">23.05.2018, 19:00</span>
-                    <div class="history-bet-info">
-                      <span class="history-event-type">П1</span>
-                      <span class="history-koef">x 2.13</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="history-coupon-num">#123434</div>
-            </div>
-            <div class="bet-history-item item-loose">
-              <div class="history-sum ruble">21 513</div>
-              <div class="history-bet-sum ruble">1 500</div>
-              <div class="history-subitem-wrapper">
-                <div class="history-subitem">
-                  <div class="history-event">Реал Мадрид - Барселона</div>
-                  <div class="history-event-info">
-                    <span class="history-date">23.05.2018, 19:00</span>
-                    <div class="history-bet-info">
-                      <span class="history-event-type">П1</span>
-                      <span class="history-koef">x 2.13</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="history-subitem">
-                  <div class="history-event">Реал Мадрид - Барселона</div>
-                  <div class="history-event-info">
-                    <span class="history-date">23.05.2018, 19:00</span>
-                    <div class="history-bet-info">
-                      <span class="history-event-type">П1</span>
-                      <span class="history-koef">x 2.13</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="history-coupon-num">#123434</div>
-            </div>
           </div>
           <div class="coupon-toggle-block">
             <ul>
@@ -1305,8 +1266,25 @@
       </footer>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript">
-      $('.accordion').accordion();
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
     </script>
   </body>
 </html>

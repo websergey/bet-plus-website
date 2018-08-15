@@ -57,27 +57,6 @@ jQuery(document).ready(function ($) {
 
 	// Анимация меню выбора режима ставки в купоне
 
-	$('#tab-toggle-1').click(function() {
-		if ($(this).hasClass('toggle-selected') == false) {
-			$(this).addClass('toggle-selected');
-			$('#tab-toggle-2').removeClass('toggle-selected');
-			$('.right-menu-form').toggle();
-			$('.coupon-toggle-block').toggle();
-			$('.coupon-history').toggle();
-		}
-	});
-	$('#tab-toggle-2').click(function() {
-		if ($(this).hasClass('toggle-selected') == false) {
-			$(this).addClass('toggle-selected');
-			$('#tab-toggle-1').removeClass('toggle-selected');
-			$('.right-menu-form').toggle();
-			$('.coupon-toggle-block').toggle();
-			$('.coupon-history').toggle();
-		}
-	});
-
-	// Анимация меню выбора режима ставки в купоне
-
 	$('#coupon-toggle-1').click(function() {
 		if ($(this).hasClass('toggle-selected') == false) {
 			$(this).addClass('toggle-selected');
@@ -181,6 +160,7 @@ jQuery(document).ready(function ($) {
 			} else if (len > 1) {
 				$('#coupon-toggle-1').removeClass('toggle-selected')
 				$('#coupon-toggle-2').addClass('toggle-selected').removeClass('disabled');
+        $('#coupon-ordinar-toggle').removeClass('disabled');
 			}
 			login.remove();
 		}
@@ -266,6 +246,7 @@ jQuery(document).ready(function ($) {
 			coupons.each(function () {
 				if ($(this).data('coupon') != target.data('coupon')) {
 					var coupon_del = couponsBlock.find('#' + $(this).data('coupon'));
+          if (coupon_del.length == 0) return;
 					koefsum.html((parseFloat(koefsum.html()) / parseFloat(coupon_del.find('.coupon-event-koef').html())).toFixed(2));
 					winsum.html(($('#bet-sum').val() * koefsum.html()).toFixed(2));
 					coupon_del.remove();
@@ -355,12 +336,11 @@ jQuery(document).ready(function ($) {
 	var now = new Date();
 	for (var i = 0; i < 7; i++) {
 		var temp = now;
-		temp.setDate(now.getDate() + i);
-		$('.filter-date').append('<a class="filter-item-date" href="#">' + formatDate(temp) + '</a>');
+    $('.filter-date').append('<a class="filter-item-date" href="#">' + formatDate(temp) + '</a>');
+		temp.setDate(now.getDate() + 1);
 	}
 
 	$(window).bind('resize', checkPosition);
-
 
   function checkBetsCount() {
     if ($('.coupon-event').length == 0) {
@@ -369,6 +349,43 @@ jQuery(document).ready(function ($) {
       $('#bets-count').html($('.coupon-event').length);
     }
   }
+
+  var ftemp = 0;
+  var fcount = 0;
+  var fwidth = $('.filter-tags-block').outerWidth();
+  var foffset = 0;
+  var fcurr = 0;
+
+  /*function filterslide() {
+      var ch = $('.filter-tags-block').children('div');
+      while (fwidth > ftemp) {
+          ftemp += ch.eq(fcount).outerWidth();
+          fcount += 1;
+      }
+      fwidth += ch.eq(fcount-1).outerWidth();
+      foffset = ch.eq(fcount-1).outerWidth() + 5;
+      if (fcurr > 0) {
+          foffset = fwidth - $('.filter-tags-block').outerWidth();
+      } else offset = ch.eq(fcount-1).outerWidth() + 5;
+      ch.animate({left: -foffset}, 100);
+      fcurr = fcount;
+  }
+
+  $('.filter-arrow-next').on('click', function () {
+    filterslide();
+  });*/
+   $('.filter-tags-block').on('scroll', function () {
+     if ($(this).offset().left != $(this).children('div:first-child').offset().left) {
+       $(this).parent().removeClass('hidden-left');
+     } else {
+       $(this).parent().addClass('hidden-left');
+     }
+     if ($(this).width() < ($(this).children('div:last-child').position().left + $(this).children('div:last-child').width() - 10)) {
+       $(this).parent().removeClass('hidden-right');
+     } else {
+       $(this).parent().addClass('hidden-right');
+     }
+   });
 
 	function checkPosition()
 	{
@@ -391,28 +408,34 @@ jQuery(document).ready(function ($) {
         }
       if ($('#left-toggle').length == 0) $('.site-nav').prepend('<li class="site-nav-item" id="left-toggle"><i class="fas fa-list-ul"></i></li>');
       if ($('#right-toggle').length == 0) $('.site-nav').append('<li class="site-nav-item" id="right-toggle"><i class="fas fa-user"></i></li>');
-      if ($('#left-close').length == 0) $('.left-menu').prepend('<a class="closebtn" id="left-close"><i class="fas fa-angle-left"></i></a>');
-      if ($('#coupon-close').length == 0) $('.right-menu').prepend('<a class="closebtn" id="coupon-close"><i class="fas fa-angle-left"></i></a>');
-      if ($('#right-close').length == 0) $('.user-menu-mobile').prepend('<a class="closebtn" id="right-close"><i class="fas fa-angle-left"></i></a>');
+      if ($('#left-close').length == 0) $('.left-menu').prepend('<a class="closebtn" id="left-close"><i class="fas fa-times"></i></a>');
+      if ($('#coupon-close').length == 0) $('.right-menu').prepend('<a class="closebtn" id="coupon-close"><i class="fas fa-times"></i></a>');
+      if ($('#right-close').length == 0) $('.user-menu-mobile').prepend('<a class="closebtn" id="right-close"><i class="fas fa-times"></i></a>');
       $('#coupon-toggle').show();
       checkBetsCount();
       $('#left-toggle').click(function () {
-        $('.left-menu').addClass('menu-open')
+        $('.left-menu').addClass('show');
+        $('.main-menu').addClass('disabled');
       });
       $('#right-toggle').click(function () {
-        $('.user-menu-mobile').addClass('menu-open')
+        $('.user-menu-mobile').addClass('show');
+        $('.main-menu').addClass('disabled');
       });
       $('#coupon-toggle').click(function () {
-        $('.right-menu').addClass('menu-open')
+        $('.right-menu').addClass('show');
+        $('.main-menu').addClass('disabled');
       });
       $('#left-close').click(function () {
-        $('.left-menu').removeClass('menu-open')
+        $('.left-menu').removeClass('show');
+        $('.main-menu').removeClass('disabled');
       });
       $('#right-close').click(function () {
-        $('.user-menu-mobile').removeClass('menu-open')
+        $('.user-menu-mobile').removeClass('show');
+        $('.main-menu').removeClass('disabled');
       });
       $('#coupon-close').click(function () {
-        $('.right-menu').removeClass('menu-open')
+        $('.right-menu').removeClass('show');
+        $('.main-menu').removeClass('disabled');
       });
     } else {
       $('.koef-type').each(function () {
@@ -430,9 +453,10 @@ jQuery(document).ready(function ($) {
       $('.site-nav').children('#left-toggle').remove();
       $('.site-nav').children('#right-toggle').remove();
       $('.site-nav').children('#coupon-toggle').remove();
-      $('.left-menu').removeClass('menu-open');
-      $('.right-menu').removeClass('menu-open');
-      $('.user-menu-mobile').removeClass('menu-open');
+      $('.main-menu').removeClass('disabled');
+      $('.left-menu').removeClass('show');
+      $('.right-menu').removeClass('show');
+      $('.user-menu-mobile').removeClass('show');
       $('#coupon-toggle').hide();
       $('.closebtn').remove();
     }
