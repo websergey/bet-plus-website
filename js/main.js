@@ -210,7 +210,7 @@ jQuery(document).ready(function ($) {
         $('.event-koef-red').each(function () {
           if ($(this).data('coupon') == coupon_del.attr('id')) {
             $(this).removeData('coupon');
-            $(this).toggleClass('event-koef-red');
+            $(this).removeClass('event-koef-red');
           }
         });
         koefsum.html((parseFloat(koefsum.html()) / parseFloat(coupon_del.find('.coupon-event-koef').html())).toFixed(2));
@@ -263,7 +263,7 @@ jQuery(document).ready(function ($) {
         $('.event-koef-red').each(function () {
           if ($(this).data('coupon') == coupon_del.attr('id')) {
             $(this).removeData('coupon');
-            $(this).toggleClass('event-koef-red');
+            $(this).removeClass('event-koef-red');
           }
         });
         koefsum.html((parseFloat(koefsum.html()) / parseFloat(coupon_del.find('.coupon-event-koef').html())).toFixed(2));

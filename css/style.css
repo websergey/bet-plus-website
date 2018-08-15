@@ -2419,6 +2419,7 @@ select::-ms-expand {
     top: auto;
   }
   .left-menu {
+    height: calc(100% - 40px);
     max-width: calc(80% - 40px);
     left: -120%;
     transform-origin: left;
