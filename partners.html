@@ -115,185 +115,94 @@
         </nav>
       </header>
       <main class="page-container">
-        <section class="left-menu">
-          <form class="left-menu-form mb-2" action="someaction.php" method="post">
-            <input type="text" name="left-search" id="left-search" placeholder="Поиск категории..." size="17" required autocomplete="off">
-            <button type="submit" for="left-search"><i class="fas fa-search"></i></button>
-          </form>
-          <ul class="left-menu-cats">
-            <li>
-              <a id="cat-football" href="#">
-                <span class="cat-name"><i class="far fa-futbol mr-1"></i>Футбол</span>
-                <span class="cat-count" id="cat-count">214</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-tennis" href="#">
-                <span class="cat-name"><i class="fas fa-solar-panel mr-1"></i>Теннис</span>
-                <span class="cat-count" id="cat-count">152</span>
-              </a>
-            </li>
-            <li id="cat-volleyball">
-              <a id="cat-volleyball" href="#">
-                <span class="cat-name"><i class="fas fa-volleyball-ball mr-1"></i>Воллейбол</span>
-                <span class="cat-count" id="cat-count">42</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-hockey" href="#">
-                <span class="cat-name"><i class="fas fa-hockey-puck mr-1"></i>Хоккей</span>
-                <span class="cat-count" id="cat-count">124</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-cybersport" href="#">
-                <span class="cat-name"><i class="fas fa-gamepad mr-1"></i>Киберспорт</span>
-                <span class="cat-count" id="cat-count">93</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-basketball" href="#">
-                <span class="cat-name"><i class="fas fa-basketball-ball mr-1"></i>Баскетбол</span>
-                <span class="cat-count" id="cat-count">78</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-table-tennis" href="#">
-                <span class="cat-name"><i class="fas fa-table-tennis mr-1"></i>Настольный теннис</span>
-                <span class="cat-count" id="cat-count">5</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-ragby" href="#">
-                <span class="cat-name"><i class="fas fa-football-ball mr-1"></i>Регби</span>
-                <span class="cat-count" id="cat-count">8</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-baseball" href="#">
-                <span class="cat-name"><i class="fas fa-baseball-ball mr-1"></i>Бейсбол</span>
-                <span class="cat-count" id="cat-count">11</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-snuker" href="#">
-                <span class="cat-name"><i class="fas fa-circle mr-1"></i>Снукер</span>
-                <span class="cat-count" id="cat-count">7</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-boks" href="#">
-                <span class="cat-name"><i class="fas fa-hand-rock mr-1"></i>Бокс</span>
-                <span class="cat-count" id="cat-count">16</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-mma" href="#">
-                <span class="cat-name"><i class="fas fa-sign-language mr-1"></i>Единоборства</span>
-                <span class="cat-count" id="cat-count">51</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-biatlon" href="#">
-                <span class="cat-name"><i class="far fa-dot-circle mr-1"></i>Биатлон</span>
-                <span class="cat-count" id="cat-count">11</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-bicycle" href="#">
-                <span class="cat-name"><i class="fas fa-bicycle mr-1"></i>Велоспорт</span>
-                <span class="cat-count" id="cat-count">15</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-formula1" href="#">
-                <span class="cat-name"><i class="fas fa-flag-checkered mr-1"></i>Формула 1</span>
-                <span class="cat-count" id="cat-count">53</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-darts" href="#">
-                <span class="cat-name"><i class="fas fa-bullseye mr-1"></i>Дартс</span>
-                <span class="cat-count" id="cat-count">16</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-skachki" href="#">
-                <span class="cat-name"><i class="fab fa-sticker-mule mr-1"></i>Скачки</span>
-                <span class="cat-count" id="cat-count">134</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-gandball" href="#">
-                <span class="cat-name"><i class="fas fa-swimmer mr-1"></i>Гандбол</span>
-                <span class="cat-count" id="cat-count">9</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-baseball" href="#">
-                <span class="cat-name"><i class="fas fa-highlighter mr-1"></i>Крикет</span>
-                <span class="cat-count" id="cat-count">16</span>
-              </a>
-            </li>
-            <li>
-              <a id="cat-baseball" href="#">
-                <span class="cat-name"><i class="fas fa-golf-ball mr-1"></i>Гольф</span>
-                <span class="cat-count" id="cat-count">31</span>
-              </a>
-            </li>
-          </ul>
-        </section>
         <div class="page-content">
           <ul class="user-profile-menu">
             <li><a href="profile.html" class="selected">Мой профиль</a></li>
             <li><a href="balance.html">Управление балансом</a></li>
-            <li><a href="history.html">История ставок</a></li>
             <li><a href="#" class="btn">Выход</a></li>
           </ul>
           <div class="page-body">
-            <form method="post" action="someaction.php" class="page-form" id="user-password-form">
-              <h3>Изображение профиля</h3>
-              <ul class="user-profile-image-block">
-                <li>
-                  <img src="https://pp.userapi.com/c846217/v846217376/37b93/3ciDEPnoYuw.jpg" class="user-profile-img">
-                </li>
-                <li>
-                  <label for="user-image" class="page-file-upload">
-                  <input type="file" name="user-image" id="user-image">
-                  Выбрать изображение
-                  </label>
-                </li>
-                <li><button type="submit">Сохранить</button></li>
-              </ul>
-            </form>
-            <form method="post" action="someaction.php" class="page-form" id="page-form">
-              <h3>Персональная информация</h3>
-              <div class="input-group">
-                <input type="text" name="user-name" id="user-name" placeholder="Имя">
-                <input type="text" name="user-secname" id="user-secname" placeholder="Фамилия">
-              </div>
-              <div class="input-group">
-                <input type="email" name="user-email" id="user-email" placeholder="Введите свой Email">
-                <input type="tel" name="user-phone" id="user-phone" placeholder="Введите свой телефон">
-              </div>
-              <button type="submit">Сохранить</button>
-            </form>
-            <form method="post" action="someaction.php" class="page-form" id="user-password-form">
-              <h3>Задать пароль</h3>
-              <div class="input-group">
-                <input type="email" name="user-pass" id="user-pass" placeholder="Пароль">
-                <input type="tel" name="user-confirm-pass" id="user-confirm-pass" placeholder="Повторите пароль">
-              </div>
-              <button type="submit">Изменить пароль</button>
-            </form>
+            <h3>Партнерская программа</h3>
             <div class="profile-info">
-              <p>К вашему аккаунту привязана авторизация через социальную сеть <strong>vkontakte</strong>.</p>
-              <p>Ваша персональная страница: <strong>http://vk.com/id2343423</strong></p>
+              Ваша партнерская ссылка: <strong><a href="http://bet-plus.ru/?partner=13432">http://bet-plus.ru/?partner=13432</a></strong>
             </div>
-            <div class="profile-info profile-green-info">
-              <p>Вы были зарегистрированы на сайте: <strong>24.07.2018 10:49</strong></p>
-              <p>IP-адрес используемый при регистрации: <strong>11.22.221.43</strong></p>
-            </div>
+              <h3>Заработок</h3>
+              <div class="partner-stat-group">
+                <div class="partner-stat-item stat-red">
+                  <span class="partner-stat-head">Баланс:</span>
+                  <span class="partner-stat-sum ruble">123124.31</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Заработано (вчера)</span>
+                  <span class="partner-stat-sum ruble">21441.04</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Заработано (за 30 дней)</span>
+                  <span class="partner-stat-sum ruble">143343.01</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Заработано (всего)</span>
+                  <span class="partner-stat-sum ruble">414243.04</span>
+                </div>
+              </div>
+              <h3>Списания</h3>
+              <div class="partner-stat-group">
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Списаний (сегодня)</span>
+                  <span class="partner-stat-sum ruble">123124.31</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Списаний (вчера)</span>
+                  <span class="partner-stat-sum ruble">21441.04</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Списаний (за 30 дней)</span>
+                  <span class="partner-stat-sum ruble">143343.01</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Списаний (всего)</span>
+                  <span class="partner-stat-sum ruble">414243.04</span>
+                </div>
+              </div>
+              <h3>Статистика регистраций</h3>
+              <div class="partner-stat-group">
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Регистраций (сегодня)</span>
+                  <span class="partner-stat-sum">124</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Регистраций (вчера)</span>
+                  <span class="partner-stat-sum">2144</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Регистраций (за 30 дней)</span>
+                  <span class="partner-stat-sum">14333</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Регистраций (всего)</span>
+                  <span class="partner-stat-sum">41424</span>
+                </div>
+              </div>
+              <h3>Статистика ставок</h3>
+              <div class="partner-stat-group">
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Ставок (сегодня)</span>
+                  <span class="partner-stat-sum">121</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Ставок (вчера)</span>
+                  <span class="partner-stat-sum">2144</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Ставок (за 30 дней)</span>
+                  <span class="partner-stat-sum">14334</span>
+                </div>
+                <div class="partner-stat-item">
+                  <span class="partner-stat-head">Ставок (всего)</span>
+                  <span class="partner-stat-sum">41424</span>
+                </div>
+              </div>
+              <h3>График роста</h3>
           </div>
         </div>
         <section class="user-menu-mobile">

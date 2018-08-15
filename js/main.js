@@ -390,6 +390,7 @@ jQuery(document).ready(function ($) {
 	function checkPosition()
 	{
     if ($(window).width() < 769) {
+      if ($('.left-menu').length == 0) $('.site-nav li:nth-child(2)').hide();
       if ($('.koef-type').length == 0) {
           $('.event-block .event-koef').each(function () {
             $(this).parent().prepend('<span class="koef-type">' + $(this).data('type') + '</span>');
@@ -406,7 +407,7 @@ jQuery(document).ready(function ($) {
             childs.wrapAll('<div class="mobile-koefs"></div>');
           });
         }
-      if ($('#left-toggle').length == 0) $('.site-nav').prepend('<li class="site-nav-item" id="left-toggle"><i class="fas fa-list-ul"></i></li>');
+      if ($('#left-toggle').length == 0  && $('.left-menu').length > 0) $('.site-nav').prepend('<li class="site-nav-item" id="left-toggle"><i class="fas fa-list-ul"></i></li>');
       if ($('#right-toggle').length == 0) $('.site-nav').append('<li class="site-nav-item" id="right-toggle"><i class="fas fa-user"></i></li>');
       if ($('#left-close').length == 0) $('.left-menu').prepend('<a class="closebtn" id="left-close"><i class="fas fa-times"></i></a>');
       if ($('#coupon-close').length == 0) $('.right-menu').prepend('<a class="closebtn" id="coupon-close"><i class="fas fa-times"></i></a>');
@@ -438,6 +439,7 @@ jQuery(document).ready(function ($) {
         $('.main-menu').removeClass('disabled');
       });
     } else {
+      $('.site-nav li:nth-child(2)').show();
       $('.koef-type').each(function () {
         $(this).remove();
       });
