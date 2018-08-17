@@ -150,6 +150,7 @@ jQuery(document).ready(function ($) {
 			$('#coupon-toggle-1').removeClass('toggle-selected').addClass('disabled');
 			$('#coupon-toggle-2').addClass('disabled')
 			$('.right-menu-form button').addClass('disabled').removeClass('btn-white-red').css('color', '#bfc7d5');
+      $('.ordinar-toggle').addClass('disabled').removeClass('active');
       $('#koef-num').html(parseFloat(0).toFixed(2));
 			return false;
 		} else {
@@ -157,14 +158,19 @@ jQuery(document).ready(function ($) {
 				$('#coupon-toggle-1').addClass('toggle-selected');
 				$('#coupon-toggle-2').removeClass('toggle-selected').addClass('disabled')
 				$('.right-menu-form button').removeClass('disabled').addClass('btn-white-red').css('color', '');
+        $('.ordinar-toggle').addClass('disabled').removeClass('active');
 			} else if (len > 1) {
 				$('#coupon-toggle-1').removeClass('toggle-selected')
 				$('#coupon-toggle-2').addClass('toggle-selected').removeClass('disabled');
-        $('#coupon-ordinar-toggle').removeClass('disabled');
+        $('.ordinar-toggle').removeClass('disabled');
 			}
 			login.remove();
 		}
 	}
+
+  $('.ordinar-toggle').on('click', function () {
+    if ($('.coupon-event-container ul li').length > 1) $(this).toggleClass('active');
+  });
 
 	checkCoupons();
 
